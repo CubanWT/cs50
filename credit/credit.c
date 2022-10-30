@@ -9,15 +9,16 @@ int main(void)
     //Check if input checksum is valid
 
     int evenTotal;
+    bool checkComplete = false;
 
-    for(int i = 1; ; i++)
+    for (int i = 1; !checkComplete; i++)
     {
-        
+        int digit1 = input % 100^i;
+        digit1 = (digit1 - (digit1 % 10)) / 10;
     }
 
 
-    int digit1 = input % 100;
-    digit1 = (digit1 - (digit1 % 10)) / 10;
+
 
     printf("%i\n", digit1);
 
