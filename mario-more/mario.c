@@ -12,10 +12,12 @@ do {
     if(height > 0 && height < 9)
     {
         string bricks;
-        for(int i = 0; i <= height; i++)
+        for(int i = 1; i <= height; i++)
         {
             //print spaces
+            spaces = height - i;
             //print hashes
+            hashes = "#" * i;
             //print middle space
             //print hashes
         }
@@ -32,3 +34,7 @@ do {
 
 
 }
+
+
+
+
