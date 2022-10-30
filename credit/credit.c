@@ -20,7 +20,7 @@ int main(void)
         int digit1 = input % 100^loopCount;
         digit1 = (digit1 - (digit1 % 10^(loopCount * 2 - 1))) / 10^(loopCount * 2 - 1);
 
-
+        evenTotal += digit1 * 2;
 
     } while (!stepComplete);
 
