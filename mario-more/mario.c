@@ -14,7 +14,10 @@ do {
         string bricks;
         for(int i = 0; i <= height; i++)
         {
-            bricks
+            //print spaces
+            //print hashes
+            //print middle space
+            //print hashes
         }
         //output
         printf("%s  %s", bricks)
