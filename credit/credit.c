@@ -19,8 +19,8 @@ int main(void)
 
         digitPosition += 2;
 
-        long digit = input % 10^digitPosition;
-        digit = (digit - digit % 10^(digitPosition - 1)) / 10^(digitPosition - 1);
+        long digit = input % (10^digitPosition);
+        //digit = (digit - digit % 10^(digitPosition - 1)) / 10^(digitPosition - 1);
 
         printf("digitPosition: %i, ",digitPosition);
         printf("digit: %li\n", digit);
