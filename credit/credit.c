@@ -10,19 +10,19 @@ int main(void)
 
     int evenTotal;
     bool stepComplete = false;
-    int loopCount = 0;
+    int digitPosition = 0;
 
    do
     {
 
         digitPosition += 2;
 
-        int digit1 = input % 10^loopCount;
-        digit1 = (digit1 - (digit1 % 10^(loopCount - 1))) / 10^(loopCount - 1);
+        int digit1 = input % 10^digitPosition;
+        digit1 = (digit1 - (digit1 % 10^(digitPosition - 1))) / 10^(digitPosition - 1);
 
-        evenTotal += digit1 * 2;
-
-        if(input % 100^loopCount)
+        printf("digitPosition: %i, ",digitPosition);
+        printf("digit: %i\n", digit1);
+        stepComplete = true;
 
     } while (!stepComplete);
 
