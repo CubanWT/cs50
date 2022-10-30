@@ -8,6 +8,7 @@ int main(void)
 
     //Check if input checksum is valid
 
+    int evenTotal;
     
 
 
