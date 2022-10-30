@@ -15,9 +15,9 @@ do {
         for(int i = 1; i <= height; i++)
         {
             //print spaces
-            spaces = height - i;
+            int spaces = height - i;
             //print hashes
-            hashes = "#" * i;
+            char[] hashes = 
             //print middle space
             //print hashes
         }
