@@ -9,7 +9,11 @@ int main(void)
     //Check if input checksum is valid
 
     int evenTotal;
-    
+
+    for(int i = 1; ; i++)
+    {
+        
+    }
 
 
     int digit1 = input % 100;
