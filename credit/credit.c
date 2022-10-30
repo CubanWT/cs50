@@ -9,28 +9,22 @@ int main(void)
     //Check if input checksum is valid
 
     int evenTotal;
-    bool checkComplete = false;
+    bool stepComplete = false;
     int loopCount = 0;
 
    do
     {
 
         loopCount++;
+
         int digit1 = input % 100^loopCount;
-        digit1 = (digit1 - (digit1 % 10)) / 10;
-
-    } while (!checkComplete);
+        digit1 = (digit1 - (digit1 % 10^(loopCount * 2 - 1))) / 10^(loopCount * 2 - 1);
 
 
 
-
-    printf("%i\n", digit1);
-
+    } while (!stepComplete);
 
 
-
-
-
-        //Check if mastercard, visa, AMEX,
+    //Check if mastercard, visa, AMEX,
     //else: output invalid
 }
