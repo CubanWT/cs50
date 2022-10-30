@@ -9,7 +9,8 @@ int main(void)
     //Check if input checksum is valid
 
     int digit1 = input % 100;
-    printf("%i", digit1);
+    digit1 = (digit1 - (digit1 % 10)) / 10;
+    printf("%i\n", digit1);
 
 
         //Check if mastercard, visa, AMEX,
