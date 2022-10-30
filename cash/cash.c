@@ -42,14 +42,16 @@ int get_cents(void)
     do
     {
         input = get_int("Number of cents: ");
-        if (input < 0) {
+        if (input < 0)
+        {
             valid = false;
         }
         else
         {
             valid = true;
         }
-    } while (!valid);
+    }
+    while (!valid);
     return input;
 }
 
