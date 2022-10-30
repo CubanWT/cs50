@@ -22,6 +22,8 @@ int main(void)
 
         evenTotal += digit1 * 2;
 
+        if(input % 100^loopCount)
+
     } while (!stepComplete);
 
 
