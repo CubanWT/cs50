@@ -11,18 +11,28 @@ do {
 
     if(height > 0 && height < 9)
     {
-        string bricks;
-        for(int i = 1; i <= height; i++)
+        for(int row = 1; row <= height; row++)
         {
             //print spaces
-            int spaces = height - i;
+            int spaces = height - row;
+            for(int i = spaces; i > 0; i--) {
+                printf(" ");
+            }
+
             //print hashes
-            char[] hashes = 
+            for(int i = row; i > 0; i--) {
+                printf("#");
+            }
+
             //print middle space
+            printf("  ");
+
             //print hashes
+            for(int i = row; i > 0; i--) {
+                printf("#");
+            }
+            printf("\n");
         }
-        //output
-        printf("%s  %s", bricks)
 
         isInRange = true;
     }
