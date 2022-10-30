@@ -8,7 +8,7 @@ int main(void)
 
     //Check if input checksum is valid
 
-
+    
 
 
     int digit1 = input % 100;
