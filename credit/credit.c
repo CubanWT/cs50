@@ -17,11 +17,11 @@ int main(void)
 
         digitPosition += 2;
 
-        int digit1 = input % 10^digitPosition;
-        digit1 = (digit1 - digit1 % 10^(digitPosition - 1)) / 10^(digitPosition - 1);
+        long digit = input % 10^digitPosition;
+        digit = (digit - digit % 10^(digitPosition - 1)) / 10^(digitPosition - 1);
 
         printf("digitPosition: %i, ",digitPosition);
-        printf("digit: %i\n", digit1);
+        printf("digit: %li\n", digit);
         stepComplete = true;
 
     } while (!stepComplete);
