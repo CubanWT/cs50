@@ -10,12 +10,16 @@ int main(void)
 
     int evenTotal;
     bool checkComplete = false;
+    int loopCount = 0;
 
-    for (int i = 1; !checkComplete; i++)
+   do
     {
-        int digit1 = input % 100^i;
+
+        loopCount++;
+        int digit1 = input % 100^loopCount;
         digit1 = (digit1 - (digit1 % 10)) / 10;
-    }
+
+    } while (!checkComplete);
 
 
 
