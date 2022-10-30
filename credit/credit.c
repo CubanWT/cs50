@@ -15,10 +15,10 @@ int main(void)
    do
     {
 
-        loopCount++;
+        digitPosition += 2;
 
-        int digit1 = input % 100^loopCount;
-        digit1 = (digit1 - (digit1 % 10^(loopCount * 2 - 1))) / 10^(loopCount * 2 - 1);
+        int digit1 = input % 10^loopCount;
+        digit1 = (digit1 - (digit1 % 10^(loopCount - 1))) / 10^(loopCount - 1);
 
         evenTotal += digit1 * 2;
 
