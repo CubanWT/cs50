@@ -23,7 +23,11 @@ int main(int argc, string argv[])
     //check if key is invalid
     for (int i = 0; i < strlen(key); i++)
     {
-        if (key[i])
+        if (isalpha(key[i]) == 0)
+        {
+            printf("Invalid character in key! only alphabetical input allowed\n");
+            return 1;
+        }
     }
 
     // get user input
