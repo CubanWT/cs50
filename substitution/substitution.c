@@ -11,13 +11,13 @@ int main(int argc, string argv[])
     if (strlen(key) == 0)
     {
         printf("Usage: ./substitution key\n");
-        return 
+        return 1;
     }
 
     else if (strlen(key) != 26)
     {
         printf("Error! key is not 26 characters long!\n");
-        return -1;
+        return 1;
     }
 
     // convert key to uppercase
