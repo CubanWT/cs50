@@ -20,6 +20,11 @@ int main(int argc, string argv[])
 
     string key = argv[1];
 
+    for (int i = 0; i < strlen(key); i++)
+    {
+        key[i] = toupper(key[i]);
+    }
+
     // check if key is invalid
     for (int i = 0; i < strlen(key); i++)
     {
@@ -33,7 +38,7 @@ int main(int argc, string argv[])
         // cycle through chars in key again
         for (int n = 0; n < strlen(key); n++)
         {
-            // checks if char selected in parent loop is the same;
+            // check if char selected in parent loop is the same
             if (key[i] == key[n])
             {
                 printf("Error! No duplicate characters allowed in key!\n");
