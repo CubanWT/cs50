@@ -6,7 +6,7 @@
 int count_letters(string text);
 int count_words(string text);
 
-char punctuation[] = {',', '.', '!', '?', '\n'};
+char punctuation[] = {',', '.', '!', '?'};
 
 int main(void)
 {
@@ -39,13 +39,13 @@ int count_words(string text)
 {
     int words = 0;
 
-    for (int i = 0; i < strlen(text); i++)
+    for (int i = 0; i <= strlen(text); i++)
     {
         if (text[i] == ' ')
         {
             words += 1;
         }
-        for (int n = 0; n > 5; n++)
+        for (int n = 0; n < 4; n++)
         {
             if (text[i] == punctuation[n])
             {
