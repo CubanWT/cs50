@@ -22,7 +22,7 @@ int main(int argc, string argv[])
 
     // get user input
     string input = get_string("plaintext: ");
-    string output = "";
+    string output = input;
 
     // cycle through chars in input
     for (int i = 0; i < strlen(input); i++)
