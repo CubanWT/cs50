@@ -13,7 +13,9 @@ int main(void)
 {
     string input = get_string("Text: ");
 
-    int L = 
+    int L = count_letters(input) / count_words(input) * 100;
+    int S = count_sentences(input) / count_letters(input) * 100;
+    
 }
 
 int count_letters(string text)
