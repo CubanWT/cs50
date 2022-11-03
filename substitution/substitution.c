@@ -31,12 +31,17 @@ int main(int argc, string argv[])
         if (input[i] >= 'a' && input[i] <= 'z')
         {
             // convert using lowercase key
-            output[i] = input[i]
+            output[i] = tolower(key[input[i] - 'a']);
         }
         // identify uppercase
         else if (input[i] >= 'A' && input[i] <= 'Z')
         {
             // convert using uppercase key
+            output[i] = toupper(key[input[i] - 'a']);
+        }
+        else
+        {
+            output[i] = input[i];
         }
 
 
