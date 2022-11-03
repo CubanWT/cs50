@@ -20,14 +20,28 @@ int main(int argc, string argv[])
 
     string key = argv[1];
 
-    //check if key is invalid
+    // check if key is invalid
     for (int i = 0; i < strlen(key); i++)
     {
+        // ensure only alphabetical input
         if (isalpha(key[i]) == 0)
         {
             printf("Invalid character in key! only alphabetical input allowed\n");
             return 1;
         }
+
+        // compare with key on shifting index to check for duplicate characters
+        string temp_key = toupper(key);
+
+        for (int n = 0; n < strlen(temp_key); n++)
+        {
+            if (temp_key[i] == temp_key[n])
+            {
+                printf("Error! No duplicate characters allowed in key!\n");
+                return 1;
+            }
+        }
+
     }
 
     // get user input
