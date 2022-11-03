@@ -14,10 +14,8 @@ int main(void)
 {
     string input = get_string("Text: ");
 
-    float L = (float) count_letters(input) / count_words(input);
-    L = L * 100;
-    float S = (float) count_sentences(input) / count_words(input);
-    S = S * 100;
+    float L = (float) count_letters(input) / count_words(input) * 100;
+    float S = (float) count_sentences(input) / count_words(input) * 100;
 
     int grade_level = round(0.0588 * L - 0.296 * S - 15.8);
 
