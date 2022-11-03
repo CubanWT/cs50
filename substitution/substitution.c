@@ -22,14 +22,21 @@ int main(int argc, string argv[])
 
     // get user input
     string input = get_string("plaintext: ");
-
+    string output;
+    
     // convert key to uppercase
     for (int i = 0; i < strlen(key); i++)
     {
         key[i] = toupper(key[i]);
     }
 
-    //
+    // cycle through chars in input
+    for (int i = 0; i < strlen(input); i++)
+    {
+        // identify lowercase
+            // convert using key
+        // identify uppercase
+    }
 
 
 }
