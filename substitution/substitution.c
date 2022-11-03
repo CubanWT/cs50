@@ -20,6 +20,9 @@ int main(int argc, string argv[])
 
     string key = argv[1];
 
+    //check if key is invalid
+    
+
     // get user input
     string input = get_string("plaintext: ");
     string output = input;
