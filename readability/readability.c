@@ -8,14 +8,14 @@ int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
 
-char punctuation[] = {',', '.', '!', '?'};
+char punctuation[] = {'.', '!', '?'};
 
 int main(void)
 {
     string input = get_string("Text: ");
 
-    float L = 100((float) count_letters(input) / count_words(input));
-    float S = 100((float) count_sentences(input) / count_words(input));
+    float L = count_letters(input) / 100.0 * count_words(input);
+    float S = count_sentences(input) / 100.0 * count_words(input);
 
     int grade_level = round(0.0588 * L - 0.296 * S - 15.8);
 
@@ -74,7 +74,7 @@ int count_sentences(string text)
 
     for (int i = 0; i < strlen(text); i++)
     {
-        for (int n = 0; n < 4; n++)
+        for (int n = 0; n < 3; n++)
         {
             if (text[i] == punctuation[n])
             {
