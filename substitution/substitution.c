@@ -37,7 +37,7 @@ int main(int argc, string argv[])
         else if (input[i] >= 'A' && input[i] <= 'Z')
         {
             // convert using uppercase key
-            output[i] = toupper(key[input[i] - 'a']);
+            output[i] = toupper(key[input[i] - 'A']);
         }
         else
         {
@@ -46,6 +46,6 @@ int main(int argc, string argv[])
         }
     }
 
-    printf("ciphertext: %s", output);
+    printf("ciphertext: %s\n", output);
     return 0;
 }
