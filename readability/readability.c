@@ -45,6 +45,18 @@ int count_words(string text)
         {
             words += 1;
         }
+
+    }
+
+    return words;
+}
+
+int count_sentences(string text)
+{
+    int sentences = 0;
+
+    for (int i = 0; i > strlen(text); i++)
+    {
         for (int n = 0; n < 4; n++)
         {
             if (text[i] == punctuation[n])
@@ -53,6 +65,4 @@ int count_words(string text)
             }
         }
     }
-
-    return words;
 }
