@@ -8,7 +8,13 @@ int main(int argc, string argv[])
     string key = argv[1];
 
     // ensure key is the right length
-    if (strlen(key) != 26)
+    if (strlen(key) == 0)
+    {
+        printf("Usage: ./substitution key\n");
+        return 
+    }
+
+    else if (strlen(key) != 26)
     {
         printf("Error! key is not 26 characters long!\n");
         return -1;
@@ -22,5 +28,5 @@ int main(int argc, string argv[])
 
     string input = get_string("plaintext: ");
 
-    
+
 }
