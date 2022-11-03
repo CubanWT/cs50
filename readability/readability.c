@@ -4,6 +4,7 @@
 
 
 int count_letters(string text);
+int count_words(string text);
 
 int main(void)
 {
@@ -30,4 +31,15 @@ int count_letters(string text)
     }
 
     return letters;
+}
+
+int count_words(string text)
+{
+    for (int i = 0; i < strlen(text); i++)
+    {
+        if (text[i] >= 'A' && text[i] <= 'Z')
+        {
+            letters += 1;
+        }
+    }
 }
