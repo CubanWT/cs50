@@ -35,11 +35,15 @@ int count_letters(string text)
 
 int count_words(string text)
 {
+    int words = 0;
+    
     for (int i = 0; i < strlen(text); i++)
     {
-        if (text[i] >= 'A' && text[i] <= 'Z')
+        if (text[i] == ' ')
         {
-            letters += 1;
+            words += 1;
         }
     }
+
+    return words;
 }
