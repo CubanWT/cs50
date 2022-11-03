@@ -5,6 +5,7 @@
 
 int count_letters(string text);
 int count_words(string text);
+int count_sentences(string text);
 
 char punctuation[] = {',', '.', '!', '?'};
 
@@ -14,6 +15,7 @@ int main(void)
 
     printf("%i letters\n", count_letters(input));
     printf("%i words\n", count_words(input));
+    printf("%i sentences\n", count_sentences(input));
 }
 
 int count_letters(string text)
@@ -37,7 +39,7 @@ int count_letters(string text)
 
 int count_words(string text)
 {
-    int words = 0;
+    int words = 1;
 
     for (int i = 0; i <= strlen(text); i++)
     {
@@ -45,7 +47,6 @@ int count_words(string text)
         {
             words += 1;
         }
-
     }
 
     return words;
@@ -61,8 +62,10 @@ int count_sentences(string text)
         {
             if (text[i] == punctuation[n])
             {
-                words += 1;
+                sentences += 1;
             }
         }
     }
+
+    return sentences;
 }
