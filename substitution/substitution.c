@@ -41,12 +41,11 @@ int main(int argc, string argv[])
         }
         else
         {
+            // preserve any !letters
             output[i] = input[i];
         }
-
-
-
     }
 
-
+    printf("ciphertext: %s", output);
+    return 0;
 }
