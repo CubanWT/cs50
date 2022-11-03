@@ -14,18 +14,18 @@ int main(void)
 {
     string input = get_string("Text: ");
 
-    float L = count_letters(input) / count_words(input) * 100.0;
-    float S = count_sentences(input) / count_words(input) * 100.0;
+    float L = count_letters(input) / 100.0 * count_words(input);
+    float S = count_sentences(input) / 100.0 * count_words(input);
 
     int grade_level = round(0.0588 * L - 0.296 * S - 15.8);
 
     if (grade_level < 1)
     {
-        printf("Before Grade 1");
+        printf("Before Grade 1\n");
     }
     else if (grade_level >= 16)
     {
-        printf("Grade 16+");
+        printf("Grade 16+\n");
     }
     else
     {
