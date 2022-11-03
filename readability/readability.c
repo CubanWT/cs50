@@ -45,7 +45,7 @@ int count_words(string text)
         {
             words += 1;
         }
-        for (int n = 0; n > 4; n++)
+        for (int n = 0; n > 5; n++)
         {
             if (text[i] == punctuation[n])
             {
