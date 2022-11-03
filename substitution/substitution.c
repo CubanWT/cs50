@@ -5,13 +5,13 @@
 
 int main(int argc, string argv[])
 {
-    // ensure key is the right length and exists
-    if (!argv[1])
+    // ensure key is the right length and exists,
+    // also limit args to one
+    if (!argv[1] || argv[2])
     {
         printf("Usage: ./substitution key\n");
         return 1;
     }
-
     else if (strlen(argv[1]) != 26)
     {
         printf("Error! key is not 26 characters long!\n");
