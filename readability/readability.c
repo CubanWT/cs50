@@ -21,10 +21,11 @@ int count_letters(string text)
     {
         if (text[i] >= 'A' && text[i] <= 'Z')
         {
-            if (text[i] >= 'a' && text[i] <= 'z')
-            {
-                letters += 1;
-            }
+            letters += 1;
+        }
+        if (text[i] >= 'a' && text[i] <= 'z')
+        {
+            letters += 1;
         }
     }
 
