@@ -15,7 +15,9 @@ int main(void)
 
     int L = count_letters(input) / count_words(input) * 100;
     int S = count_sentences(input) / count_letters(input) * 100;
-    
+
+    int grade_level = 0.0588 * L - 0.296 * S - 15.8;
+    printf("Grade %i\n", grade_level);
 }
 
 int count_letters(string text)
