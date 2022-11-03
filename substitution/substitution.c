@@ -30,14 +30,11 @@ int main(int argc, string argv[])
             return 1;
         }
 
-        // keep temp_key chars in same case to compare them
-        string temp_key = toupper(key);
-
-        // cycle through chars in temp_key
-        for (int n = 0; n < strlen(temp_key); n++)
+        // cycle through chars in key again
+        for (int n = 0; n < strlen(key); n++)
         {
             // checks if parent loop char is the same as any char in temp_key
-            if (temp_key[i] == temp_key[n])
+            if (key[i] == key[n])
             {
                 printf("Error! No duplicate characters allowed in key!\n");
                 return 1;
