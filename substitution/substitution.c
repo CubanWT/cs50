@@ -39,7 +39,7 @@ int main(int argc, string argv[])
         for (int n = 0; n < strlen(key); n++)
         {
             // check if char selected in parent loop is the same
-            if (key[i] == key[n])
+            if (key[i] == key[n] && n != i)
             {
                 printf("Error! No duplicate characters allowed in key!\n");
                 return 1;
