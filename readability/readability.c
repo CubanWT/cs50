@@ -6,12 +6,13 @@
 int count_letters(string text);
 int count_words(string text);
 
+
 int main(void)
 {
     string input = get_string("Text: ");
 
     printf("%i letters\n", count_letters(input));
-
+    printf("%i words\n", count_words(input));
 }
 
 int count_letters(string text)
@@ -36,13 +37,14 @@ int count_letters(string text)
 int count_words(string text)
 {
     int words = 0;
-    
+
     for (int i = 0; i < strlen(text); i++)
     {
         if (text[i] == ' ')
         {
             words += 1;
         }
+        if (text[i])
     }
 
     return words;
