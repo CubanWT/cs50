@@ -21,7 +21,10 @@ int main(int argc, string argv[])
     string key = argv[1];
 
     //check if key is invalid
-    
+    for (int i = 0; i < strlen(key); i++)
+    {
+        if (key[i])
+    }
 
     // get user input
     string input = get_string("plaintext: ");
