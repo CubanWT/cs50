@@ -33,7 +33,7 @@ int main(int argc, string argv[])
         // cycle through chars in key again
         for (int n = 0; n < strlen(key); n++)
         {
-            // checks if parent loop char is the same as any char in temp_key
+            // checks if char selected in parent loop is the same;
             if (key[i] == key[n])
             {
                 printf("Error! No duplicate characters allowed in key!\n");
