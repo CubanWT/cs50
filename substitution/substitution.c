@@ -7,10 +7,17 @@ int main(int argc, string argv[])
 {
     string key = argv[1];
 
+    // ensure key is the right length
     if (strlen(key) != 26)
     {
         printf("Error! key is not 26 characters long!\n");
         return -1;
+    }
+
+    // convert key to uppercase
+    for (int i = 0; i < strlen(key); i++)
+    {
+        
     }
 
     string input = get_string("plaintext: ");
