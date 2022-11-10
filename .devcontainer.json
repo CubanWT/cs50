@@ -16,13 +16,14 @@
     "vscjava.vscode-java-debug",
     "vsls-contrib.gitdoc"
   ],
-  "image": "ghcr.io/cs50/codespace:1ed4f87ce6bc659379b39ac3a23daf7d5b28a309",
+  "image": "ghcr.io/cs50/codespace:2d3e90c689e44d5c009c84b78ee33327f68cf3c7",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
     "C_Cpp.codeFolding": "Disabled",
     "C_Cpp.debugShortcut": false,
     "C_Cpp.dimInactiveRegions": false,
+    "C_Cpp.doxygen.generateOnType": false,
     "C_Cpp.enhancedColorization": "Enabled",
     "C_Cpp.errorSquiggles": "Disabled",
     "breadcrumbs.enabled": false,
