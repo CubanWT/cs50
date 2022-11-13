@@ -1,6 +1,6 @@
 sort1 uses: bubble sort
 
-How do you know?: TODO
+How do you know?: Significantly slower in worst case with reversed input than best case with sorted, matching bubble sort's O(n^2) and Omega(n).
 
 reversed5000: 0.084s
 reversed10000: 0.337s
@@ -15,6 +15,7 @@ How do you know?: merge sort is O(nlog(n)) which is faster than selection & bubb
 
 reversed5000: 0.030s
 reversed10000: 0.088s
+reversed50000: 0.588s
 sorted5000: 0.040s
 sorted10000: 0.077s
 
@@ -27,4 +28,4 @@ sorted5000: 0.54s;
 sorted10000: 0.193s;
 sorted50000: 3.278s;
 
-How do you know?: Speed between best and worst case scenarios is roughly the same, so must be Theta(...) which rules out bubble sort and is slower than 
+How do you know?: Speed between best and worst case scenarios is roughly the same, so must be Theta(...) which rules out bubble sort. Is slower than sort2, so must be selection sort.
