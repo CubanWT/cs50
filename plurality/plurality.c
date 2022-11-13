@@ -83,12 +83,12 @@ void print_winner(void)
 {
     // TODO
 
-
+    int higher = 0;
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidate[i].votes > candidate[i + 1].votes)
         {
-            
+            higher = i;
         }
     }
 
