@@ -27,4 +27,4 @@ sorted5000: 0.54s;
 sorted10000: 0.193s;
 sorted50000: 3.278s;
 
-How do you know?: TODO
+How do you know?: Speed between best and worst case scenarios is roughly the same, so must be Theta(...) which rules out bubble sort and is slower than 
