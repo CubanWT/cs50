@@ -209,7 +209,7 @@ bool is_tie(int min)
     for (int i = 0; i < candidate_count; i++)
     {
         //checks if current candidate vote count is greater than min
-        if(candidates[i].votes > min)
+        if (candidates[i].votes > min)
             return false;
     }
 
