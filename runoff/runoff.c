@@ -145,11 +145,18 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-    // TODO
+    // iterate through voters
     for (int i = 0; i < voter_count - 1; i++)
     {
-        if (!candidates[preferences[i][0]].eliminated)
-            candidates[preferences[i][0]].votes++;
+        // check if current voter's top rank candidate is eliminated
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (!candidates[preferences[i][j]].eliminated)
+            {
+                candidates[preferences[i][j]].votes++;
+                break;
+            }
+        }
     }
     return;
 }
@@ -173,6 +180,10 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+
+    }
     return 0;
 }
 
