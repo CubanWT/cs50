@@ -170,7 +170,7 @@ bool print_winner(void)
     for (int i = 0; i < candidate_count; i++)
     {
         //check if has over 50% of votes
-        if (candidates[i],votes > vote_count / 2)
+        if (candidates[i].votes > voter_count / 2)
         {
             //prints winner
             printf("%s", candidates[i].name);
@@ -223,7 +223,7 @@ void eliminate(int min)
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes == min)
-            candidates[i].eliminated;
+            candidates[i].eliminated = true;
     }
     return;
 }
