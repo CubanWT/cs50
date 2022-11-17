@@ -195,7 +195,9 @@ int find_min(void)
         {
             //check if candidate vote total is lower than known lowest
             if (candidates[i].votes < candidates[lowest].votes)
+            {
                 lowest = i;
+            }
         }
     }
 
@@ -210,7 +212,9 @@ bool is_tie(int min)
     {
         //checks if current candidate vote count is greater than min
         if (candidates[i].votes > min)
+        {
             return false;
+        }
     }
 
     return true;
@@ -222,8 +226,11 @@ void eliminate(int min)
     //iterate through candidates
     for (int i = 0; i < candidate_count; i++)
     {
+        //eliminates candidate if they have lowest votes
         if (candidates[i].votes == min)
+        {
             candidates[i].eliminated = true;
+        }
     }
     return;
 }
