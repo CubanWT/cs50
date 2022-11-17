@@ -177,6 +177,7 @@ bool print_winner(void)
             return true;
         }
     }
+
     return false;
 }
 
@@ -197,6 +198,7 @@ int find_min(void)
                 lowest = i;
         }
     }
+
     return candidates[lowest].votes;
 }
 
@@ -206,7 +208,8 @@ bool is_tie(int min)
     //iterate through candidates
     for (int i = 0; i < candidate_count; i++)
     {
-        if(candidate[i].votes > min)
+        //checks if current candidate vote count is greater than min
+        if(candidates[i].votes > min)
             return false;
     }
 
@@ -216,6 +219,11 @@ bool is_tie(int min)
 // Eliminate the candidate (or candidates) in last place
 void eliminate(int min)
 {
-    // TODO
+    //iterate through candidates
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == min)
+            candidates[i].eliminated;
+    }
     return;
 }
