@@ -29,7 +29,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = round(.272 * image[i][j].rgbtRed + .534 * image[i][j].rgbtGreen + .131 * image[i][j].rgbtBlue);
         }
     }
-    printf("r: %i, g: %i, b: %i", image[100][100].rgbtRed, image[100][100].rgbtGreen, image[100][100].rgbtBlue);
+    printf("r: %i, g: %i, b: %i\n", image[100][100].rgbtRed, image[100][100].rgbtGreen, image[100][100].rgbtBlue);
 }
 
 // Reflect image horizontally
