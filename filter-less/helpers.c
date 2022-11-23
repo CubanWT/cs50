@@ -91,6 +91,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; i++)
         {
             //average of 3 pixels above
+            if (i != 0;)
+            {
+                avgAbove = image[i - 1][j - 1]
+            }
             //average of 3 pixels in line
             //average of 3 pixels below
             //average of 3 averages
@@ -100,5 +104,5 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 float rowAvg(RGBTRIPLE currentPixel)
 {
-    
+    return 0f;
 }
