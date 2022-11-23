@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <math.h>
+#include <stdio.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -26,7 +27,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int originalRed = image[i][j].rgbtRed;
             int originalGreen = image[i][j].rgbtGreen;
             int originalBlue = image[i][j].rgbtBlue;
-            
+
             image[i][j].rgbtRed = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
             image[i][j].rgbtGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
             image[i][j].rgbtBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
@@ -43,8 +44,13 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 image[i][j].rgbtBlue = 255;
             else if (image[i][j].rgbtBlue < 0)
                 image[i][j].rgbtBlue = 0;
+
+            printf("originals: %i %i %i\n", originalRed, originalGreen, originalBlue);
+            printf("sepia: %i %i %i\n", image[i][j].rgbtRed, image[i][j].rgbtGreen, image[i][j].rgbtBlue);
         }
     }
+
+
 }
 
 // Reflect image horizontally
