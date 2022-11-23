@@ -81,12 +81,14 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE copy[height][width];
+
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
             RGBTRIPLE avgAbove, avgLine, avgBelow;
-            RGBTRIPLE copy[height][width];
+            copy[i][j] = image[i][j];
 
             //average of 3 pixels below
             if (i != height - 1)
@@ -137,21 +139,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of 3 pixels in line
             if (j == width - 1)
             {
-                avgLine.rgbtRed = round((image[i][j - 1].rgbtRed + image[i][j].rgbtRed) / 2);
-                avgLine.rgbtGreen = round((image[i][j - 1].rgbtGreen + image[i][j].rgbtGreen) / 2);
-                avgLine.rgbtBlue = round((image[i][j - 1].rgbtBlue + image[i][j].rgbtBlue) / 2);
+                avgLine.rgbtRed = round((copy[i][j - 1].rgbtRed + copy[i][j].rgbtRed) / 2);
+                avgLine.rgbtGreen = round((copy[i][j - 1].rgbtGreen + copy[i][j].rgbtGreen) / 2);
+                avgLine.rgbtBlue = round((copy[i][j - 1].rgbtBlue + copy[i][j].rgbtBlue) / 2);
             }
             else if (j != 0)
             {
-                avgLine.rgbtRed = round((image[i][j - 1].rgbtRed + image[i][j].rgbtRed + image[i][j + 1].rgbtRed) / 3);
-                avgLine.rgbtGreen = round((image[i][j - 1].rgbtGreen + image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen) / 3);
-                avgLine.rgbtBlue = round((image[i][j - 1].rgbtBlue + image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue) / 3);
+                avgLine.rgbtRed = round((copy[i][j - 1].rgbtRed + copy[i][j].rgbtRed + copy[i][j + 1].rgbtRed) / 3);
+                avgLine.rgbtGreen = round((copy[i][j - 1].rgbtGreen + copy[i][j].rgbtGreen + copy[i][j + 1].rgbtGreen) / 3);
+                avgLine.rgbtBlue = round((copy[i][j - 1].rgbtBlue + copy[i][j].rgbtBlue + copy[i][j + 1].rgbtBlue) / 3);
             }
             else
             {
-                avgLine.rgbtRed = round((image[i][j].rgbtRed + image[i][j + 1].rgbtRed) / 2);
-                avgLine.rgbtGreen = round((image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen) / 2);
-                avgLine.rgbtBlue = round((image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue) / 2);
+                avgLine.rgbtRed = round((copy[i][j].rgbtRed + copy[i][j + 1].rgbtRed) / 2);
+                avgLine.rgbtGreen = round((copy[i][j].rgbtGreen + copy[i][j + 1].rgbtGreen) / 2);
+                avgLine.rgbtBlue = round((copy[i][j].rgbtBlue + copy[i][j + 1].rgbtBlue) / 2);
             }
 
             //average of 3 averages
