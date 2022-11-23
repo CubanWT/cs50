@@ -86,9 +86,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             RGBTRIPLE avgAbove, avgLine, avgBelow;
             //average of 3 pixels above
-            if (i != 0;)
+            if (i != 0)
             {
-                avgAbove.rgbtRed = image[i - 1][j - 1]
+                if (j != 0)
+                {
+                    avgAbove.rgbtRed = round((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 3);
+                }
+
             }
             //average of 3 pixels in line
             //average of 3 pixels below
