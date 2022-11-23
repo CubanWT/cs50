@@ -2,12 +2,6 @@
 #include <math.h>
 
 
-typedef struct {
-    int rgbtRed;
-    int rgbtBlue;
-    int rgbtGreen;
-} pixel;
-
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -67,7 +61,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < (int) floor(width / 2); j++)
         {
-            pixel temp;
+            RGBTRIPLE temp;
             temp.rgbtRed = image[i][j].rgbtRed;
             temp.rgbtGreen = image[i][j].rgbtGreen;
             temp.rgbtBlue = image[i][j].rgbtBlue;
@@ -90,10 +84,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; i++)
         {
+            RGBTRIPLE avgAbove, avgLine, avgBelow;
             //average of 3 pixels above
             if (i != 0;)
             {
-                avgAbove = image[i - 1][j - 1]
+                avgAbove.rgbtRed = image[i - 1][j - 1]
             }
             //average of 3 pixels in line
             //average of 3 pixels below
