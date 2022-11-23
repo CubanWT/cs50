@@ -1,6 +1,5 @@
 #include "helpers.h"
 #include <math.h>
-#include <stdio.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -28,29 +27,26 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int originalGreen = image[i][j].rgbtGreen;
             int originalBlue = image[i][j].rgbtBlue;
 
-            image[i][j].rgbtRed = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
-            image[i][j].rgbtGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
-            image[i][j].rgbtBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
+            int sepiaRed = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
+            int sepiaGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
+            int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
-            if (image[i][j].rgbtRed > 255)
-                image[i][j].rgbtRed = 255;
-            else if (image[i][j].rgbtRed < 0)
-                image[i][j].rgbtRed = 0;
-            if (image[i][j].rgbtGreen > 255)
-                image[i][j].rgbtGreen = 255;
-            else if (image[i][j].rgbtGreen < 0)
-                image[i][j].rgbtGreen = 0;
-            if (image[i][j].rgbtBlue > 255)
-                image[i][j].rgbtBlue = 255;
-            else if (image[i][j].rgbtBlue < 0)
-                image[i][j].rgbtBlue = 0;
+            if (sepiaRed > 255)
+                sepiaRed = 255;
+            else if (sepiaRed < 0)
+                sepiaRed = 0;
+            if (sepiaGreen > 255)
+                sepiaGreen = 255;
+            else if (sepiaGreen < 0)
+                sepiaGreen = 0;
+            if (sepiaBlue > 255)
+                sepiaBlue = 255;
+            else if (sepiaBlue < 0)
+                sepiaBlue = 0;
 
-            if (i == 50)
-            {
-                printf("originals: %i %i %i\n", originalRed, originalGreen, originalBlue);
-                printf("sepia: %i %i %i\n", image[i][j].rgbtRed, image[i][j].rgbtGreen, image[i][j].rgbtBlue);
-            }
-
+            image[i][j].rgbtRed = sepiaRed;
+            image[i][j].rgbtGreen = sepiaGreen;
+            image[i][j].rgbtBlue = sepiaBlue;
         }
     }
 
