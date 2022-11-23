@@ -1,6 +1,7 @@
 #include "helpers.h"
 #include <math.h>
 
+RGBTRIPLE rowAvg(int i, int j, int height, int width, RGBTRIPLE image[height][width]);
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -89,14 +90,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of 3 pixels above
             if (i != 0)
             {
-                avgAbove = rowAvg(i - 1, j);
+                avgAbove = rowAvg(i - 1, j, height, width, image[height][width]);
             }
             //average of 3 pixels in line
-            avgLine = rowAvg(i, j);
+            avgAbove = rowAvg(i, j, height, width, image[height][width]);
             //average of 3 pixels below
             if (i != height - 1)
             {
-                avgBelow = rowAvg(i + 1, j);
+                avgAbove = rowAvg(i + 1, j, height, width, image[height][width]);
             }
             //average of 3 averages
         }
