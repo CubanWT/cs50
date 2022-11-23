@@ -90,7 +90,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of 3 pixels above
             if (i != 0)
             {
-                avgAbove = rowAvg(i - 1, j, *image[height][width]);
+                avgAbove = rowAvg(i - 1, j, image[height][width]);
             }
             //average of 3 pixels in line
             //avgAbove = rowAvg(i, j, height, width, image[height][width]);
