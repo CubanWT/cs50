@@ -45,8 +45,12 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             else if (image[i][j].rgbtBlue < 0)
                 image[i][j].rgbtBlue = 0;
 
-            printf("originals: %i %i %i\n", originalRed, originalGreen, originalBlue);
-            printf("sepia: %i %i %i\n", image[i][j].rgbtRed, image[i][j].rgbtGreen, image[i][j].rgbtBlue);
+            if (i == 50)
+            {
+                printf("originals: %i %i %i\n", originalRed, originalGreen, originalBlue);
+                printf("sepia: %i %i %i\n", image[i][j].rgbtRed, image[i][j].rgbtGreen, image[i][j].rgbtBlue);
+            }
+
         }
     }
 
