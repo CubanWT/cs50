@@ -92,21 +92,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 if (j == width - 1)
                 {
-                    avgAbove.rgbtRed = round((image[i][j - 1].rgbtRed + image[i - 1][j].rgbtRed) / 2);
-                    avgAbove.rgbtGreen = round((image[i][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen) / 2);
-                    avgAbove.rgbtBlue = round((image[i][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue) / 2);
+                    avgAbove.rgbtRed = round((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed) / 2);
+                    avgAbove.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen) / 2);
+                    avgAbove.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue) / 2);
                 }
                 else if (j != 0)
                 {
-                    avgAbove.rgbtRed = round((image[i][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 3);
+                    avgAbove.rgbtRed = round((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 3);
                     avgAbove.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 3);
                     avgAbove.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 3);
                 }
                 else
                 {
-                    avgAbove.rgbtRed = round((image[i][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 2);
-                    avgAbove.rgbtGreen = round((image[i][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 2);
-                    avgAbove.rgbtBlue = round((image[i][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 2);
+                    avgAbove.rgbtRed = round((image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 2);
+                    avgAbove.rgbtGreen = round((image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 2);
+                    avgAbove.rgbtBlue = round((image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 2);
                 }
             }
             //average of 3 pixels in line
