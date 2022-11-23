@@ -90,7 +90,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; i++)
         {
-            //compare surrounding pixels
+            //average of 3 pixels above
+            //average of 3 pixels in line
+            //average of 3 pixels below
+            //average of 3 averages
         }
     }
+}
+
+float rowAvg(RGBTRIPLE currentPixel)
+{
+    
 }
