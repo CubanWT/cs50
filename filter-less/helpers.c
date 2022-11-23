@@ -88,7 +88,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of 3 pixels above
             if (i != 0)
             {
-
+                avgAbove = rowAvg(i - 1);
             }
             //average of 3 pixels in line
 
@@ -98,24 +98,27 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
-float rowAvg(RGBTRIPLE image[][])
+RGBTRIPLE rowAvg(row)
 {
-    if (j != 0)
+    RGBTRIPLE avg;
+    if (j == width - 1)
     {
-        avgAbove.rgbtRed = round((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 3);
-        avgAbove.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 3);
-        avgAbove.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 3);
+        avg.rgbtRed = round((image[row][j - 1].rgbtRed + image[i - 1][j].rgbtRed) / 2);
+        avg.rgbtGreen = round((image[row][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen) / 2);
+        avg.rgbtBlue = round((image[row][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue) / 2);
+    }
+    else if (j != 0)
+    {
+        avg.rgbtRed = round((image[row][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 3);
+        avg.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 3);
+        avg.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 3);
     }
     else
     {
-        avgAbove.rgbtRed = round((image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 2);
-        avgAbove.rgbtGreen = round((image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 2);
-        avgAbove.rgbtBlue = round((image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 2);
+        avg.rgbtRed = round((image[row][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 2);
+        avg.rgbtGreen = round((image[row][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 2);
+        avg.rgbtBlue = round((image[row][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 2);
     }
-    if (j == width - 1)
-    {
-        avgAbove.rgbtRed = round((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed) / 2);
-        avgAbove.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen) / 2);
-        a0vgAbove.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue) / 2);
-    }
+
+    return avg;
 }
