@@ -1,6 +1,13 @@
 #include "helpers.h"
 #include <math.h>
 
+
+typedef struct {
+    int rgbtRed;
+    int rgbtBlue;
+    int rgbtGreen;
+} pixel;
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -60,7 +67,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width, j++)
         {
-            
+
+            image[i][j]
         }
     }
 }
