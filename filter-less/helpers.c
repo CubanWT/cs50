@@ -90,24 +90,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of 3 pixels above
             if (i != 0)
             {
-                if (j == width - 1)
-  {
-        avg.rgbtRed = round((image[i + 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed) / 2);
-        avg.rgbtGreen = round((image[i][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen) / 2);
-        avg.rgbtBlue = round((image[i][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue) / 2);
-    }
-    else if (j != 0)
-    {
-        avg.rgbtRed = round((image[i][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 3);
-        avg.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 3);
-        avg.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 3);
-    }
-    else
-    {
-        avg.rgbtRed = round((image[i][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 2);
-        avg.rgbtGreen = round((image[i][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 2);
-        avg.rgbtBlue = round((image[i][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 2);
-    }
+                avgAbove = rowAvg(i - 1, j, height, width, image[height][width]);
             }
             //average of 3 pixels in line
             avgAbove = rowAvg(i, j, height, width, image[height][width]);
@@ -121,7 +104,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
-RGBTRIPLE rowAvg(int i, int j, int height, int width, RGBTRIPLE image[height][width])
+RGBTRIPLE rowAvg(int i, int j, int height, int width, RGBTRIPLE *image[height][width])
 {
     RGBTRIPLE avg;
     if (j == width - 1)
