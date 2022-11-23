@@ -90,10 +90,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; i++)
         {
-            if (i == 0)
-            {
-                
-            }
+            //compare surrounding pixels
         }
     }
 }
