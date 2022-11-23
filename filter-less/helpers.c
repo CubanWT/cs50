@@ -65,7 +65,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < (double) floor(width / 2); j++)
+        for (int j = 0; j < (int) floor(width / 2); j++)
         {
             pixel temp;
             temp.rgbtRed = image[i][j].rgbtRed;
@@ -86,5 +86,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; i++)
+        {
+            return;
+        }
+    }
 }
