@@ -88,34 +88,34 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of 3 pixels above
             if (i != 0)
             {
-                if (j != 0)
-                {
-                    avgAbove.rgbtRed = round((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 3);
-                    avgAbove.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 3);
-                    avgAbove.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 3);
-                }
-                else
-                {
-                    avgAbove.rgbtRed = round((image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 2);
-                    avgAbove.rgbtGreen = round((image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 2);
-                    avgAbove.rgbtBlue = round((image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 2);
-                }
-                if (j == width - 1)
-                {
-                    avgAbove.rgbtRed = round((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed) / 2);
-                    avgAbove.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen) / 2);
-                    avgAbove.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue) / 2);
-                }
+
             }
             //average of 3 pixels in line
-            
+
             //average of 3 pixels below
             //average of 3 averages
         }
     }
 }
 
-float rowAvg(RGBTRIPLE currentPixel)
+float rowAvg(RGBTRIPLE image[][])
 {
-    return 0f;
+    if (j != 0)
+    {
+        avgAbove.rgbtRed = round((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 3);
+        avgAbove.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 3);
+        avgAbove.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 3);
+    }
+    else
+    {
+        avgAbove.rgbtRed = round((image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed) / 2);
+        avgAbove.rgbtGreen = round((image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 2);
+        avgAbove.rgbtBlue = round((image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 2);
+    }
+    if (j == width - 1)
+    {
+        avgAbove.rgbtRed = round((image[i - 1][j - 1].rgbtRed + image[i - 1][j].rgbtRed) / 2);
+        avgAbove.rgbtGreen = round((image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen) / 2);
+        a0vgAbove.rgbtBlue = round((image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue) / 2);
+    }
 }
