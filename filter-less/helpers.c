@@ -131,8 +131,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 avgBelow = rowAvg(row[], onEdge);
 
             }
-            //average of current row
-            //average of row below
+            //average of bottom edge
+            //average of middle pixels
             free(row);
         }
     }
