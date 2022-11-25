@@ -146,7 +146,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 avgBelow = rowAvg(row[], onEdge);
 
-                avgLine.rgbtRed =
+                image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed) / 2);
+                image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue) / 2);
+                image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen) / 2);
 
             }
             //average of bottom edge
