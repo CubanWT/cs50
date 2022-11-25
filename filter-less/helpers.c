@@ -125,7 +125,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
 
             //average of top edge
-            if (i != 0)
+            if (i == 0)
             {
                 avgLine = rowAvg(row[], onEdge);
                 if (j == 0)
