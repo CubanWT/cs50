@@ -4,7 +4,14 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-RGBTRIPLE rowAvg(RGBTRIPLE row[2], bool onEdge);
+RGBFLOAT rowAvg(RGBTRIPLE row[2], bool onEdge);
+
+typedef struct
+{
+    float rgbtRed;
+    float rgbtGreen;
+    float rgbtBlue;
+} RGBFLOAT;
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -101,7 +108,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             bool onEdge;
             RGBTRIPLE* row;
-            RGBTRIPLE avgAbove, avgLine, avgBelow;
+            RGBFLOAT avgAbove, avgLine, avgBelow;
 
             if (j == 0)
             {
@@ -229,20 +236,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
 
-RGBTRIPLE rowAvg(RGBTRIPLE row[2], bool onEdge)
+RGBFLOAT rowAvg(RGBTRIPLE row[2], bool onEdge)
 {
-    RGBTRIPLE avg;
+    RGBFLOAT avg;
     if (!onEdge)
     {
-        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed + row[2].rgbtRed) / 3.0);
-        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue) / 3.0);
-        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen + row[2].rgbtGreen) / 3.0);
+        avg.rgbtRed = (row[0].rgbtRed + row[1].rgbtRed + row[2].rgbtRed) / 3.0;
+        avg.rgbtBlue = (row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue) / 3.0;
+        avg.rgbtGreen = (row[0].rgbtGreen + row[1].rgbtGreen + row[2].rgbtGreen) / 3.0;
     }
     else
     {
-        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed) / 2.0);
-        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue) / 2.0);
-        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen) / 2.0);
+        avg.rgbtRed = (row[0].rgbtRed + row[1].rgbtRed) / 2.0;
+        avg.rgbtBlue = (row[0].rgbtBlue + row[1].rgbtBlue) / 2.0;
+        avg.rgbtGreen = (row[0].rgbtGreen + row[1].rgbtGreen) / 2.0;
     }
     return avg;
 }
