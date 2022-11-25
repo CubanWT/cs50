@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 RGBTRIPLE rowAvg(RGBTRIPLE row[2], bool onEdge);
 
