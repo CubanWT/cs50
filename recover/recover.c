@@ -21,9 +21,6 @@ int main(int argc, char *argv[])
     }
 
     blockSize = 512 * sizeof(BYTE);
+    
 
-    char *buffer = malloc(7 * sizeof(char))
-    {
-        
-    }
 }
