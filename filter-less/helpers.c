@@ -127,7 +127,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of top edge
             if (i == 0)
             {
-                avgLine = rowAvg(row[], onEdge);
+                avgLine = rowAvg(row, onEdge);
                 if (j == 0)
                 {
                     row[0] = copy[i + 1][j];
@@ -144,7 +144,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     row[1] = copy[i + 1][j];
                     row[2] = copy[i + 1][j + 1];
                 }
-                avgBelow = rowAvg(row[], onEdge);
+                avgBelow = rowAvg(row, onEdge);
 
                 image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed) / 2);
                 image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue) / 2);
@@ -154,7 +154,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of bottom edge
             else if (i == height - 1)
             {
-                avgLine = rowAvg(row[], onEdge);
+                avgLine = rowAvg(row, onEdge);
                 if (j == 0)
                 {
                     row[0] = copy[i - 1][j];
@@ -171,7 +171,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     row[1] = copy[i - 1][j];
                     row[2] = copy[i - 1][j + 1];
                 }
-                avgAbove = rowAvg(row[], onEdge);
+                avgAbove = rowAvg(row, onEdge);
 
                 image[i][j].rgbtRed = round((avgLine.rgbtRed + avgAbove.rgbtRed) / 2);
                 image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgAbove.rgbtBlue) / 2);
@@ -179,7 +179,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                avgLine = rowAvg(row[], onEdge);
+                avgLine = rowAvg(row, onEdge);
                 if (j == 0)
                 {
                     row[0] = copy[i + 1][j];
@@ -196,11 +196,28 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     row[1] = copy[i + 1][j];
                     row[2] = copy[i + 1][j + 1];
                 }
-                avgBelow = rowAvg(row[], onEdge);
+                avgBelow = rowAvg(row, onEdge);
+                if (j == 0)
+                {
+                    row[0] = copy[i - 1][j];
+                    row[1] = copy[i - 1][j + 1];
+                }
+                else if (j == width - 1)
+                {
+                    row[0] = copy[i - 1][j - 1];
+                    row[1] = copy[i - 1][j];
+                }
+                else
+                {
+                    row[0] = copy[i - 1][j - 1];
+                    row[1] = copy[i - 1][j];
+                    row[2] = copy[i - 1][j + 1];
+                }
+                avgAbove = rowAvg(row, onEdge);
 
-                image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed) / 2);
-                image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue) / 2);
-                image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen) / 2);
+                image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed + avgAbove.rgbtRed) / 3);
+                image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue + avgAbove.rgbtBlue) / 3);
+                image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen + avgAbove.rgbtGreen) / 3);
             }
             //average of middle pixels
             free(row);
