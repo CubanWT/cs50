@@ -96,6 +96,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 float rowAvg(RGBTRIPLE row[2])
 {
-    //
+    
     return;
 }
