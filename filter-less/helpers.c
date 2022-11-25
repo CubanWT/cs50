@@ -147,9 +147,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 avgBelow = rowAvg(row, onEdge);
 
-                image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed) / 2);
-                image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue) / 2);
-                image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen) / 2);
+                image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed) / 2.0);
+                image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue) / 2.0);
+                image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen) / 2.0);
 
             }
             //average of bottom edge
@@ -174,9 +174,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 avgAbove = rowAvg(row, onEdge);
 
-                image[i][j].rgbtRed = round((avgLine.rgbtRed + avgAbove.rgbtRed) / 2);
-                image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgAbove.rgbtBlue) / 2);
-                image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgAbove.rgbtGreen) / 2);
+                image[i][j].rgbtRed = round((avgLine.rgbtRed + avgAbove.rgbtRed) / 2.0);
+                image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgAbove.rgbtBlue) / 2.0);
+                image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgAbove.rgbtGreen) / 2.0);
             }
             else
             {
