@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
         return 2;
     }
 
-    char *buffer = malloc()
+    char *buffer = malloc(7 * sizeof(char))
     {
-
+        
     }
 }
