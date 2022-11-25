@@ -18,5 +18,11 @@ int main(int argc, char *argv[])
         return 2;
     }
 
-    //
+    int
+
+    //loop through file
+    while ( != EOF)
+    {
+
+    }
 }
