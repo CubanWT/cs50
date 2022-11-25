@@ -128,7 +128,22 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             if (i != 0)
             {
                 avgLine = rowAvg(row[], onEdge);
-                if (sizeof(row) == sizeof(RGBTRIPLE))
+                if (j == 0)
+                {
+                    row[0] = copy[i + 1][j];
+                    row[1] = copy[i + 1][j + 1];
+                }
+                else if (j == width - 1)
+                {
+                    row[0] = copy[i + 1][j - 1];
+                    row[1] = copy[i + 1][j];
+                }
+                else
+                {
+                    row[0] = copy[i + 1][j - 1];
+                    row[1] = copy[i + 1][j];
+                    row[2] = copy[i + 1][j + 1];
+                }
                 avgBelow = rowAvg(row[], onEdge);
 
             }
