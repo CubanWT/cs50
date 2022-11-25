@@ -119,7 +119,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 RGBTRIPLE rowAvg(int row, int column, int width, RGBTRIPLE *copy[row + 1][column + 1])
 {
-    RGBTRIPLE image = *copy;
+    RGBTRIPLE image[row + 1][column + 1] = *copy;
     RGBTRIPLE avg;
 
     //average current pixel and right pixel if on left edge
