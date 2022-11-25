@@ -94,8 +94,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     //average of row below
 }
 
-float rowAvg(RGBTRIPLE row[2])
+float rowAvg(RGBTRIPLE row[2], int onEdge)
 {
-    
+    RGBTRIPLE avg;
+    if (onEdge == 0)
+    {
+        avg.rgbtRed = (row[0].rgbtRed + row[1].rgbtRed + row[2].rgbtRed) / 3;
+        avg.rgbtBlue = (row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue) / 3;
+        avg.rgbtGreen = (row[0].rgbtGreen + row[1].rgbtGreen + row[2].rgbtGreen) / 3;
+    }
+    else if (onEdge == 1)
+    {
+        
+    }
     return;
 }
