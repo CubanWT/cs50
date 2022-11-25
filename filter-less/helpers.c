@@ -1,7 +1,7 @@
 #include "helpers.h"
 #include <math.h>
 
-RGBTRIPLE rowAvg(int i, int j, int height, int width, RGBTRIPLE image[height][width]);
+RGBTRIPLE rowAvg(int row, int column, int width, RGBTRIPLE *image[row + 1][column + 1]);
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
