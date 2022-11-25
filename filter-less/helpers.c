@@ -100,7 +100,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             bool onEdge;
             RGBTRIPLE* row;
-            RGBTRIPLE avg;
+            RGBTRIPLE avgAbove, avgLine, avgBelow;
 
             if (j == 0)
             {
@@ -127,8 +127,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of top edge
             if (i != 0)
             {
-                avg = rowAvg(row[], onEdge);
-                
+                avgLine = rowAvg(row[], onEdge);
+                avgBelow = rowAvg(row[], onEdge);
+
             }
             //average of current row
             //average of row below
