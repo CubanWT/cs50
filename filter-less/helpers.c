@@ -159,8 +159,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     row[1] = copy[i + 1][j];
                     row[2] = copy[i + 1][j + 1];
                 }
+
+                //average of row below
                 avgBelow = rowAvg(row, onEdge);
 
+                //calculate overall averages and save onto image
                 image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed) / 2.0);
                 image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue) / 2.0);
                 image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen) / 2.0);
@@ -169,7 +172,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of bottom edge
             else if (i == height - 1)
             {
+                //average of current row of pixels
                 avgLine = rowAvg(row, onEdge);
+
+                //check if edge case (width) and set values in row[] accordingly
                 if (j == 0)
                 {
                     row[0] = copy[i - 1][j];
@@ -186,15 +192,22 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     row[1] = copy[i - 1][j];
                     row[2] = copy[i - 1][j + 1];
                 }
+
+                //average of row above
                 avgAbove = rowAvg(row, onEdge);
 
+                //calculate overall average and set values to image
                 image[i][j].rgbtRed = round((avgLine.rgbtRed + avgAbove.rgbtRed) / 2.0);
                 image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgAbove.rgbtBlue) / 2.0);
                 image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgAbove.rgbtGreen) / 2.0);
             }
+            //average of all middle (height) pixels
             else
             {
+                //average of current row of pixels
                 avgLine = rowAvg(row, onEdge);
+
+                //check if edge case (width) and set values in row[] accordingly
                 if (j == 0)
                 {
                     row[0] = copy[i + 1][j];
@@ -211,7 +224,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     row[1] = copy[i + 1][j];
                     row[2] = copy[i + 1][j + 1];
                 }
+
+                //average of row below
                 avgBelow = rowAvg(row, onEdge);
+
+                //check if edge case (width) again but set values for row above instead of below
                 if (j == 0)
                 {
                     row[0] = copy[i - 1][j];
@@ -228,8 +245,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     row[1] = copy[i - 1][j];
                     row[2] = copy[i - 1][j + 1];
                 }
+
+                //average of row above
                 avgAbove = rowAvg(row, onEdge);
 
+                //
                 image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed + avgAbove.rgbtRed) / 3.0);
                 image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue + avgAbove.rgbtBlue) / 3.0);
                 image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen + avgAbove.rgbtGreen) / 3.0);
