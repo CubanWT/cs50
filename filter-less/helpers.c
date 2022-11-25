@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 
+//creating new RGBTRIPLE struct for accurate values in blur
 typedef struct
 {
     float rgbtRed;
@@ -103,6 +104,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
+    //iterate through pixels
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -111,6 +113,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             RGBTRIPLE* row;
             RGBFLOAT avgAbove, avgLine, avgBelow;
 
+            //check if edge case, then allocate memory for current row of pixel values needed to blur and initialize values
             if (j == 0)
             {
                 onEdge = true;
@@ -136,7 +139,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //average of top edge
             if (i == 0)
             {
+                //average of current row of pixels
                 avgLine = rowAvg(row, onEdge);
+
+                //check if edge case (width) and assign values in row[] accordingly
                 if (j == 0)
                 {
                     row[0] = copy[i + 1][j];
