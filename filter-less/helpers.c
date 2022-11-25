@@ -249,7 +249,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 //average of row above
                 avgAbove = rowAvg(row, onEdge);
 
-                //
+                //calculate overall averages and set values on image
                 image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed + avgAbove.rgbtRed) / 3.0);
                 image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue + avgAbove.rgbtBlue) / 3.0);
                 image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen + avgAbove.rgbtGreen) / 3.0);
@@ -262,7 +262,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 }
 
 
-
+//function to calculate average of row of pixels for blur
 RGBFLOAT rowAvg(RGBTRIPLE row[2], bool onEdge)
 {
     RGBFLOAT avg;
