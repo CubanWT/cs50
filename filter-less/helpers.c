@@ -146,6 +146,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 avgBelow = rowAvg(row[], onEdge);
 
+                avgLine.rgbtRed = 
+
             }
             //average of bottom edge
             //average of middle pixels
