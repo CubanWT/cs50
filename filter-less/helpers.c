@@ -13,12 +13,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            float avg = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3;
-            if (avg % 1 != 0)
-                printf("%f\n", avg);
-            image[i][j].rgbtBlue = round(avg);
-            image[i][j].rgbtGreen = round(avg);
-            image[i][j].rgbtRed = round(avg);
+            float avg = round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0);
+            image[i][j].rgbtBlue = avg;
+            image[i][j].rgbtGreen = avg;
+            image[i][j].rgbtRed = avg;
         }
     }
 }
@@ -218,9 +216,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 avgAbove = rowAvg(row, onEdge);
 
-                image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed + avgAbove.rgbtRed) / 3);
-                image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue + avgAbove.rgbtBlue) / 3);
-                image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen + avgAbove.rgbtGreen) / 3);
+                image[i][j].rgbtRed = round((avgLine.rgbtRed + avgBelow.rgbtRed + avgAbove.rgbtRed) / 3.0);
+                image[i][j].rgbtBlue = round((avgLine.rgbtBlue + avgBelow.rgbtBlue + avgAbove.rgbtBlue) / 3.0);
+                image[i][j].rgbtGreen = round((avgLine.rgbtGreen + avgBelow.rgbtGreen + avgAbove.rgbtGreen) / 3.0);
             }
             //average of middle pixels
             free(row);
@@ -236,15 +234,15 @@ RGBTRIPLE rowAvg(RGBTRIPLE row[2], bool onEdge)
     RGBTRIPLE avg;
     if (!onEdge)
     {
-        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed + row[2].rgbtRed)) / 3;
-        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue)) / 3;
-        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen + row[2].rgbtGreen)) / 3;
+        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed + row[2].rgbtRed)) / 3.0;
+        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue)) / 3.0;
+        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen + row[2].rgbtGreen)) / 3.0;
     }
     else
     {
-        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed)) / 2;
-        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue)) / 2;
-        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen)) / 2;
+        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed)) / 2.0;
+        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue)) / 2.0;
+        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen)) / 2.0;
     }
     return avg;
 }
