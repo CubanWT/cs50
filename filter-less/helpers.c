@@ -1,6 +1,7 @@
 #include "helpers.h"
 #include <math.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 float rowAvg(RGBTRIPLE row[2], bool onEdge);
 
