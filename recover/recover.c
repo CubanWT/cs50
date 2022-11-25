@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 
     //read input file and check if file can't be opened
     FILE *file = fopen(argv[0], "r");
+    BYTE *image = malloc(blockSize)
     if (file == NULL)
     {
         printf("File cannot be opened.\n");
@@ -22,6 +23,6 @@ int main(int argc, char *argv[])
 
     //remembe block size of FAT format jpgs are in
     blockSize = 512 * sizeof(BYTE);
-    
+
 
 }
