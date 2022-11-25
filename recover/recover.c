@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
         return 2;
     }
 
+    //remembe block size of FAT format jpgs are in
     blockSize = 512 * sizeof(BYTE);
     
 
