@@ -46,17 +46,29 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
             if (sepiaRed > 255)
+            {
                 sepiaRed = 255;
+            }
             else if (sepiaRed < 0)
+            {
                 sepiaRed = 0;
+            }
             if (sepiaGreen > 255)
+            {
                 sepiaGreen = 255;
+            }
             else if (sepiaGreen < 0)
+            {
                 sepiaGreen = 0;
+            }
             if (sepiaBlue > 255)
+            {
                 sepiaBlue = 255;
+            }
             else if (sepiaBlue < 0)
+            {
                 sepiaBlue = 0;
+            }
 
             image[i][j].rgbtRed = sepiaRed;
             image[i][j].rgbtGreen = sepiaGreen;
@@ -110,7 +122,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             bool onEdge;
-            RGBTRIPLE* row;
+            RGBTRIPLE *row;
             RGBFLOAT avgAbove, avgLine, avgBelow;
 
             //check if edge case, then allocate memory for current row of pixel values needed to blur and initialize values
@@ -128,7 +140,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 row[0] = copy[i][j - 1];
                 row[1] = copy[i][j];
             }
-            else {
+            else
+            {
                 onEdge = false;
                 row = malloc(3 * sizeof(RGBTRIPLE));
                 row[0] = copy[i][j - 1];
