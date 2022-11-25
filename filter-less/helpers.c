@@ -89,5 +89,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             copy[i][j] = image[i][j];
         }
     }
-    
+    //average of row above
+    //average of current row
+    //average of row below
+}
+
+float rowAvg(RGBTRIPLE row[2])
+{
+    //
+    return;
 }
