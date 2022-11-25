@@ -103,11 +103,11 @@ float rowAvg(RGBTRIPLE row[2], int onEdge)
         avg.rgbtBlue = (row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue) / 3;
         avg.rgbtGreen = (row[0].rgbtGreen + row[1].rgbtGreen + row[2].rgbtGreen) / 3;
     }
-    else if (onEdge == 1)
+    else
     {
-        avg.rgbtRed = (row[0].rgbtRed + row[1].rgbtRed + row[2].rgbtRed) / 3;
-        avg.rgbtBlue = (row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue) / 3;
-        avg.rgbtGreen = (row[0].rgbtGreen + row[1].rgbtGreen + row[2].rgbtGreen) / 3;
+        avg.rgbtRed = (row[0].rgbtRed + row[1].rgbtRed) / 2;
+        avg.rgbtBlue = (row[0].rgbtBlue + row[1].rgbtBlue) / 2;
+        avg.rgbtGreen = (row[0].rgbtGreen + row[1].rgbtGreen) / 2;
     }
     return;
 }
