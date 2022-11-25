@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <math.h>
+#include <stdlib.h>
 
 float rowAvg(RGBTRIPLE row[2], bool onEdge);
 
@@ -96,7 +97,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            RGBTRIPLE* row = malloc(sizeof(RGBTRIPLE));
+            bool onEdge;
+            RGBTRIPLE* row;
+
+            if (j == 0 || j == width - 1)
+            {
+                onEdge = true;
+                row = malloc(2 * sizeof(RGBTRIPLE));
+            }
+            else {
+                onEdge = false;
+                row = malloc(3 * sizeof(RGBTRIPLE));
+            }
 
             //average of row above
             if (i != 0)
@@ -105,6 +117,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             //average of current row
             //average of row below
+            free(row);
         }
     }
 
