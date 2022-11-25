@@ -101,20 +101,32 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             bool onEdge;
             RGBTRIPLE* row;
 
-            if (j == 0 || j == width - 1)
+            if (j == 0)
             {
                 onEdge = true;
                 row = malloc(2 * sizeof(RGBTRIPLE));
+                row[0] = copy[i][j];
+                row[1] = copy[i][j + 1];
+            }
+            else if (j == width - 1)
+            {
+                onEdge = true;
+                row = malloc(2 * sizeof(RGBTRIPLE));
+                row[0] = copy[i][j - 1];
+                row[1] = copy[i][j];
             }
             else {
                 onEdge = false;
                 row = malloc(3 * sizeof(RGBTRIPLE));
+                row[0] = copy[i][j - 1];
+                row[1] = copy[i][j];
+                row[2] = copy[i][j + 1];
             }
 
             //average of row above
             if (i != 0)
             {
-
+                
             }
             //average of current row
             //average of row below
