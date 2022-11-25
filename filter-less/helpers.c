@@ -234,15 +234,15 @@ RGBTRIPLE rowAvg(RGBTRIPLE row[2], bool onEdge)
     RGBTRIPLE avg;
     if (!onEdge)
     {
-        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed + row[2].rgbtRed)) / 3.0;
-        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue)) / 3.0;
-        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen + row[2].rgbtGreen)) / 3.0;
+        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed + row[2].rgbtRed) / 3.0);
+        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue) / 3.0);
+        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen + row[2].rgbtGreen) / 3.0);
     }
     else
     {
-        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed)) / 2.0;
-        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue)) / 2.0;
-        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen)) / 2.0;
+        avg.rgbtRed = round((row[0].rgbtRed + row[1].rgbtRed) / 2.0);
+        avg.rgbtBlue = round((row[0].rgbtBlue + row[1].rgbtBlue) / 2.0);
+        avg.rgbtGreen = round((row[0].rgbtGreen + row[1].rgbtGreen) / 2.0);
     }
     return avg;
 }
