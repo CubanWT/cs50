@@ -1,6 +1,7 @@
 #include "helpers.h"
 #include <math.h>
 
+float rowAvg(RGBTRIPLE row[2], bool onEdge);
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -82,6 +83,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE copy[height][width];
 
+    //make copy of image for accurate blur values
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -89,15 +91,29 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             copy[i][j] = image[i][j];
         }
     }
-    //average of row above
-    //average of current row
-    //average of row below
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            RGBTRIPLE* row = malloc(sizeof(RGBTRIPLE));
+
+            //average of row above
+            if (i != 0)
+            {
+
+            }
+            //average of current row
+            //average of row below
+        }
+    }
+
 }
 
-float rowAvg(RGBTRIPLE row[2], int onEdge)
+float rowAvg(RGBTRIPLE row[2], bool onEdge)
 {
     RGBTRIPLE avg;
-    if (onEdge == 0)
+    if (!onEdge)
     {
         avg.rgbtRed = (row[0].rgbtRed + row[1].rgbtRed + row[2].rgbtRed) / 3;
         avg.rgbtBlue = (row[0].rgbtBlue + row[1].rgbtBlue + row[2].rgbtBlue) / 3;
@@ -109,5 +125,5 @@ float rowAvg(RGBTRIPLE row[2], int onEdge)
         avg.rgbtBlue = (row[0].rgbtBlue + row[1].rgbtBlue) / 2;
         avg.rgbtGreen = (row[0].rgbtGreen + row[1].rgbtGreen) / 2;
     }
-    return;
+    return avg;
 }
