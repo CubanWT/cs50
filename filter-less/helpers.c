@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-//creating new RGBTRIPLE struct for accurate values in blur
+//creating new RGBTRIPLE struct for accurate values in blur (check50 was marking it incorrect over difference of 1)
 typedef struct
 {
     float rgbtRed;
