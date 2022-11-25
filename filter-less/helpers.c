@@ -4,7 +4,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-RGBFLOAT rowAvg(RGBTRIPLE row[2], bool onEdge);
 
 typedef struct
 {
@@ -12,6 +11,8 @@ typedef struct
     float rgbtGreen;
     float rgbtBlue;
 } RGBFLOAT;
+
+RGBFLOAT rowAvg(RGBTRIPLE row[2], bool onEdge);
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
