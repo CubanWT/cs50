@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     }
 
     //create buffer
-    int blockSize = 512;
+    int blockSize = 0x200;
     int buffer[512];
 
     //store file name and jpeg count
