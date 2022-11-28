@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
        {
         FILE *image = fopen(filename, "w");
         fwrite(image, 1, blockSize, buffer);
-
+        
         fclose(image);
        }
     }
