@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
             }
             else
             {
+                //close previous image
                 fclose(image);
 
                 //format and save filename
@@ -69,6 +70,7 @@ int main(int argc, char *argv[])
                 fwrite(buffer, 1, blockSize, image);
             }
 
+            //check if image is empty
             if (image == NULL)
             {
                 printf("Could not write to image file.\n");
@@ -77,7 +79,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            
+            if ()
         }
     }
 
