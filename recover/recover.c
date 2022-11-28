@@ -42,6 +42,10 @@ int main(int argc, char *argv[])
             buffer[3] >= 0xe0 &&
             buffer[3] <= 0xf0)
         {
+            if (count == 0)
+            {
+                
+            }
             //format and save filename
             sprintf(filename, "%03i.jpg", count);
             count++;
@@ -51,12 +55,12 @@ int main(int argc, char *argv[])
 
             //write jpg in buffer to file
             fwrite(buffer, 1, blockSize, image);
+
             if (image == NULL)
             {
                 printf("Could not write to image file.\n");
                 return 2;
             }
-            fclose(image);
         }
     }
 
