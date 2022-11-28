@@ -47,8 +47,10 @@ int main(int argc, char *argv[])
         {
             count++;
 
-            //
+            //create image file
             FILE *image = fopen(filename, "w");
+
+            //write jpg in buffer to file
             fwrite(&buffer, 1, blockSize, image);
             fclose(image);
         }
