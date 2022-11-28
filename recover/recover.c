@@ -79,7 +79,12 @@ int main(int argc, char *argv[])
         }
         else
         {
-            if ()
+            //check if currently writing to jpg
+            if (image != NULL)
+            {
+                //keep writing to file
+                fwrite(buffer, 1, blockSize, image);
+            }
         }
     }
 
