@@ -69,12 +69,15 @@ int main(int argc, char *argv[])
                 fwrite(buffer, 1, blockSize, image);
             }
 
-
             if (image == NULL)
             {
                 printf("Could not write to image file.\n");
                 return 2;
             }
+        }
+        else
+        {
+            
         }
     }
 
