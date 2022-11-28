@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     int *buffer = malloc(blockSize);
 
     //store file name and jpeg count
-    char *filename[7];
+    char *filename[8];
     int count = 0;
 
     //create file for image
