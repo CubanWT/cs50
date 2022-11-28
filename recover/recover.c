@@ -45,12 +45,18 @@ int main(int argc, char *argv[])
         }
         int currentChar = fgetc(image);
 
-
-        sprintf("%i", currentChar);
-
-        if (counter == 50)
+        if (counter < 10)
         {
-            blockFound == false;
+            printf("00%i\n", counter);
+        }
+        else if (counter < 100)
+        {
+            printf("0%i\n", counter);
+        }
+
+        if (counter == 15)
+        {
+            blockFound = false;
         }
     }
 
