@@ -26,14 +26,14 @@ int main(int argc, char *argv[])
 
     //create buffer
     int blockSize = 512;
-    int *buffer = malloc(blockSize);
+    int buffer[512];
 
     //store file name and jpeg count
     char *filename = malloc(8 * sizeof(char));
     int count = 0;
 
     //look through blocks
-    while(fread(buffer, 1, blockSize, file) == blockSize)
+    while(fread(&buffer, 1, blockSize, file) == blockSize)
     {
         count++;
         sprintf(filename, "%03i.jpg", count);
@@ -43,12 +43,11 @@ int main(int argc, char *argv[])
             ((int) buffer[3] >= 0xe0 || (int) buffer[3] <= 0xf0))
         {
             FILE *image = fopen(filename, "w");
-            fwrite(image, 1, blockSize, buffer);
+            fwrite(image, 1, blockSize, &buffer);
             fclose(image);
         }
     }
 
     fclose(file);
-    free(buffer);
     free(filename);
 }
