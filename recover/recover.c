@@ -69,13 +69,6 @@ int main(int argc, char *argv[])
                 //write jpg in buffer to file
                 fwrite(buffer, 1, blockSize, image);
             }
-
-            //check if image is empty
-            if (image == NULL)
-            {
-                printf("Could not write to image file.\n");
-                return 2;
-            }
         }
         else
         {
