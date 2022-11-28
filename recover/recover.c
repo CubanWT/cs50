@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     }
 
     //read input file and check if file can't be opened
-    FILE *file = fopen(argv[2], "r");
+    FILE *file = fopen(argv[1], "r");
     if (file == NULL)
     {
         printf("File cannot be opened.\n");
