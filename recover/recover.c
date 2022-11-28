@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     //variables
     int blockSize = 512;
-    BYTE *image = malloc(blockSize);
+    FILE *image = malloc(blockSize);
 
 
     if (fread(image, blockSize, 1, file) == 0)
