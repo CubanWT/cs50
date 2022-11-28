@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     //create buffer
     int blockSize = 512;
-    FILE *buffer = malloc(blockSize);
+    int *buffer = malloc(blockSize);
 
     //store file name and jpeg count
     char *filename = malloc(8 * sizeof(char));
