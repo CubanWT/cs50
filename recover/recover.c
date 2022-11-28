@@ -41,11 +41,14 @@ int main(int argc, char *argv[])
                 if (buffer[2] == 0xff)
                     if (buffer[3] >= 0xe0)
                         if (buffer[3] <= 0xf0)
+                            {
+                                count++;
+                                FILE *image = fopen(filename, "w");
+                                fwrite(&buffer, 1, blockSize, image);
+                                fclose(image);
+                            }
         {
-            count++;
-            FILE *image = fopen(filename, "w");
-            fwrite(&buffer, 1, blockSize, image);
-            fclose(image);
+
         }
     }
 
