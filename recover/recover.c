@@ -34,8 +34,9 @@ int main(int argc, char *argv[])
     }
 
     int counter = 0;
+    bool blockFound = true;
 
-    while(bool blockFound == true)
+    while( blockFound == true)
     {
         if (fread(image, blockSize, 1, file) == 0)
         {
