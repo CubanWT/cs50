@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <stdint.h>
 
 typedef uint8_t BYTE;
 
@@ -21,8 +23,32 @@ int main(int argc, char *argv[])
     }
 
     //variables
-    blockSize = 512 * sizeof(BYTE);
+    int blockSize = 512;
     BYTE *image = malloc(blockSize);
+
+
+    if (fread(image, blockSize, 1, file) == 0)
+    {
+        printf("Couldn't read file\n");
+        return 2;
+    }
+
+    while(bool blockFound == true)
+    {
+        if (fread(image, blockSize, 1, file) == 0)
+        {
+            printf("Couldn't read file\n");
+            return 2;
+        }
+        int currentChar = fgetc(image);
+
+        sprintf("%i", currentChar);
+        
+        if (currentChar == currentChar)
+        {
+
+        }
+    }
 
     free(image);
 }
