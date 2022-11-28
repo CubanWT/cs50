@@ -32,6 +32,9 @@ int main(int argc, char *argv[])
     char *filename = malloc(8 * sizeof(char));
     int count = 0;
 
+    //initalize image file
+    FILE *image;
+
     //look through blocks
     while(fread(buffer, 1, blockSize, file) == blockSize)
     {
@@ -49,7 +52,7 @@ int main(int argc, char *argv[])
                 count++;
 
                 //create image file
-                FILE *image = fopen(filename, "w");
+                image = fopen(filename, "w");
 
                 //write block in buffer to file
                 fwrite(buffer, 1, blockSize, image);
@@ -64,7 +67,7 @@ int main(int argc, char *argv[])
                 count++;
 
                 //create image file
-                FILE *image = fopen(filename, "w");
+                image = fopen(filename, "w");
 
                 //write block in buffer to file
                 fwrite(buffer, 1, blockSize, image);
