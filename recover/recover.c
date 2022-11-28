@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
     {
         count++;
         sprintf(filename, "%03i.jpg", count);
+
         
     }
 
