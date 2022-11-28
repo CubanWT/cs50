@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
     //variables
     int blockSize = 512;
     FILE *image = malloc(blockSize);
+    char *filename = malloc(5 * sizeof(char));
 
 
     if (fread(image, blockSize, 1, file) == 0)
@@ -47,18 +48,20 @@ int main(int argc, char *argv[])
 
         if (counter < 10)
         {
-            printf("00%i\n", counter);
+            sprintf(filename, "00%i\n", counter);
         }
         else if (counter < 100)
         {
-            printf("0%i\n", counter);
+            sprintf(filename, "0%i\n", counter);
         }
 
         if (counter == 15)
         {
             blockFound = false;
         }
+        printf("%s", filename);
     }
 
     free(image);
+    free(filename);
 }
