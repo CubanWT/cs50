@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
            (buffer[3] >= 0xe0 || buffer[3] <= 0xf0))
        {
         FILE *image = fopen(filename, "w");
+        for
        }
     }
 
