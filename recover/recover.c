@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
         return 2;
     }
 
+    int counter = 0;
+
     while(bool blockFound == true)
     {
         if (fread(image, blockSize, 1, file) == 0)
@@ -42,11 +44,12 @@ int main(int argc, char *argv[])
         }
         int currentChar = fgetc(image);
 
+
         sprintf("%i", currentChar);
 
-        if (currentChar == currentChar)
+        if (counter == 50)
         {
-            
+            blockFound == false;
         }
     }
 
