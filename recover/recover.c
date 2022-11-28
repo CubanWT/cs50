@@ -38,10 +38,10 @@ int main(int argc, char *argv[])
         count++;
         sprintf(filename, "%03i.jpg", count);
 
-       if ((char) buffer[0] == 0xff &&
-           (char) buffer[1] == 0xd8 &&
-           (char) buffer[2] == 0xff &&
-           ((char) buffer[3] >= 0xe0 || (char) buffer[3] <= 0xf0))
+       if ((float) buffer[0] == 0xff &&
+           (float) buffer[1] == 0xd8 &&
+           (float) buffer[2] == 0xff &&
+           ((float) buffer[3] >= 0xe0 || (float) buffer[3] <= 0xf0))
        {
         FILE *image = fopen(filename, "w");
         fwrite(image, 1, blockSize, buffer);
