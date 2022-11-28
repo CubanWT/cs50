@@ -32,21 +32,12 @@ int main(int argc, char *argv[])
     char *filename[8];
     int count = 0;
 
-    //create file for image
 
-    if (fread(image, blockSize, 1, file) == 0)
+    while(fread(buffer, blockSize, 1, file) == 512)
     {
-        printf("Couldn't read file\n");
-        return 2;
+        counter++;
+        sprintf(filename, "%i03")
     }
 
-    int counter = 0;
-    bool blockFound = true;
-
-    while( blockFound == true)
-    {
-
-    }
-
-    free(image);
+    free(buffer);
 }
