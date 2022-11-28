@@ -8,7 +8,7 @@ typedef uint8_t BYTE;
 int main(int argc, char *argv[])
 {
     //ensure proper usage
-    if(argc != 2)
+    if (argc != 2)
     {
         printf("Improper usage. use ./recover {file}\n");
         return 1;
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     FILE *image;
 
     //look through blocks
-    while(fread(buffer, 1, blockSize, file) == blockSize)
+    while (fread(buffer, 1, blockSize, file) == blockSize)
     {
         //check if block has jpg headers
         if (buffer[0] == 0xff &&
