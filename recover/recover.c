@@ -36,11 +36,11 @@ int main(int argc, char *argv[])
     while(fread(&buffer, 1, blockSize, file) == blockSize)
     {
         sprintf(filename, "%03i.jpg", count);
-        if (buffer[0] == 0xff &&
-            buffer[1] == 0xd8 &&
-            buffer[2] == 0xff &&
-            buffer[3] >= 0xe0 &&
-            buffer[3] <= 0xf0)
+        if (buffer[0] == 0xff)
+            if (buffer[1] == 0xd8)
+                if (buffer[2] == 0xff)
+                    if (buffer[3] >= 0xe0)
+                        if (buffer[3] <= 0xf0)
         {
             count++;
             FILE *image = fopen(filename, "w");
