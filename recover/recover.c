@@ -32,8 +32,7 @@ int main(int argc, char *argv[])
     char *filename = malloc(8 * sizeof(char));
     int count = 0;
 
-
-    while(fread(buffer, blockSize, 1, file) == 512)
+    while(fread(buffer, 512, 1, file))
     {
         count++;
         sprintf(filename, "%03i.jpg", count);
