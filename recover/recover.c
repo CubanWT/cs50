@@ -26,14 +26,14 @@ int main(int argc, char *argv[])
 
     //create buffer
     int blockSize = 512;
-    BYTE buffer[511];
+    BYTE *buffer = malloc(blockSize);
 
     //store file name and jpeg count
     char *filename = malloc(8 * sizeof(char));
     int count = 0;
 
     //look through blocks
-    while(fread(&buffer, 1, blockSize, file) == blockSize)
+    while(fread(buffer, 1, blockSize, file) == blockSize)
     {
         //check if block has jpeg headers
         if (buffer[0] == 0xff &&
@@ -62,4 +62,5 @@ int main(int argc, char *argv[])
 
     fclose(file);
     free(filename);
+    free(buffer);
 }
