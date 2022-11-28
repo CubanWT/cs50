@@ -16,17 +16,23 @@ int main(int argc, char *argv[])
 
     //read input file and check if file can't be opened
     FILE *file = fopen(argv[1], "r");
+
+    //check if file could be opened
     if (file == NULL)
     {
         printf("File cannot be opened.\n");
         return 2;
     }
 
-    //variables
+    //create buffer
     int blockSize = 512;
-    FILE *image = malloc(blockSize);
-    char *filename = malloc(5 * sizeof(char));
+    int *buffer = malloc(blockSize);
 
+    //store file name and jpeg count
+    char *filename[7];
+    int count = 0;
+
+    //create file for image
 
     if (fread(image, blockSize, 1, file) == 0)
     {
@@ -39,29 +45,8 @@ int main(int argc, char *argv[])
 
     while( blockFound == true)
     {
-        if (fread(image, blockSize, 1, file) == 0)
-        {
-            printf("Couldn't read file\n");
-            return 2;
-        }
-        int currentChar = fgetc(image);
 
-        if (counter < 10)
-        {
-            sprintf(filename, "00%i\n", counter);
-        }
-        else if (counter < 100)
-        {
-            sprintf(filename, "0%i\n", counter);
-        }
-
-        if (counter == 15)
-        {
-            blockFound = false;
-        }
-        printf("%s", filename);
     }
 
     free(image);
-    free(filename);
 }
