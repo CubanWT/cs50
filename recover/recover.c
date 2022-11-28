@@ -85,6 +85,7 @@ int main(int argc, char *argv[])
     }
 
     fclose(file);
+    fclose(image);
     free(filename);
     free(buffer);
 }
