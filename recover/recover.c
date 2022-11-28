@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
         else
         {
             //check if currently writing to jpg
-            if (image != NULL)
+            if (count != 0)
             {
                 //keep writing to file
                 fwrite(buffer, 1, blockSize, image);
