@@ -37,12 +37,11 @@ int main(int argc, char *argv[])
     {
         count++;
         sprintf(filename, "%03i.jpg", count);
-
-       if (*(int *) buffer[0] == 0xff &&
-           *(int *) buffer[1] == 0xd8 &&
-           *(int *) buffer[2] == 0xff &&
-           (*(int *) buffer[3] >= 0xe0 || *(int *) buffer[3] <= 0xf0))
-       {
+        if ((int) buffer[0] == 0xff &&
+            (int) buffer[1] == 0xd8 &&
+            (int) buffer[2] == 0xff &&
+            ((int) buffer[3] >= 0xe0 || (int) buffer[3] <= 0xf0))
+        {
         FILE *image = fopen(filename, "w");
         fwrite(image, 1, blockSize, buffer);
         fclose(image);
