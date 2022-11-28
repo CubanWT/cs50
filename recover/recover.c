@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     int *buffer = malloc(blockSize);
 
     //store file name and jpeg count
-    char *filename[8];
+    char *filename = malloc(8 * sizeof(char));
     int count = 0;
 
 
@@ -37,9 +37,10 @@ int main(int argc, char *argv[])
     {
         count++;
         sprintf(filename, "%03i.jpg", count);
-        print("%s\n", filename);
+        printf("%s\n", filename);
     }
 
     fclose(file);
     free(buffer);
+    free(filename);
 }
