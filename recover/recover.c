@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     char *filename = malloc(8 * sizeof(char));
     int count = 0;
 
-    //initalize image file
+    //declare image file
     FILE *image;
 
     //look through blocks
