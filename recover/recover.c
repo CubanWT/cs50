@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     //look through blocks
     while(fread(buffer, 1, blockSize, file) == blockSize)
     {
-        //check if block has jpeg headers
+        //check if block has jpg headers
         if (buffer[0] == 0xff &&
             buffer[1] == 0xd8 &&
             buffer[2] == 0xff &&
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
                 //create image file
                 FILE *image = fopen(filename, "w");
 
-                //write jpg in buffer to file
+                //write block in buffer to file
                 fwrite(buffer, 1, blockSize, image);
             }
             else
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
                 //create image file
                 FILE *image = fopen(filename, "w");
 
-                //write jpg in buffer to file
+                //write block in buffer to file
                 fwrite(buffer, 1, blockSize, image);
             }
         }
