@@ -35,9 +35,11 @@ int main(int argc, char *argv[])
 
     while(fread(buffer, blockSize, 1, file) == 512)
     {
-        counter++;
-        sprintf(filename, "%i03")
+        count++;
+        sprintf(filename, "%03i.jpg", count);
+        print("%s\n", filename);
     }
 
+    fclose(file);
     free(buffer);
 }
