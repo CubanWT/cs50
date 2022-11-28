@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
             ((int) buffer[3] >= 0xe0 || (int) buffer[3] <= 0xf0))
         {
             FILE *image = fopen(filename, "w");
-            fwrite(image, 1, blockSize, &buffer);
+            fwrite(&buffer, 1, blockSize, image);
             fclose(image);
         }
     }
