@@ -42,9 +42,9 @@ int main(int argc, char *argv[])
            buffer[1] == 0xd8 &&
            buffer[2] == 0xff &&
            (buffer[3] >= 0xe0 || buffer[3] <= 0xf0))
-        {
-            
-        }
+       {
+        
+       }
     }
 
     fclose(file);
