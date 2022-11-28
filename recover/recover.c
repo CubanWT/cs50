@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
         //format and save filename
         sprintf(filename, "%03i.jpg", count);
 
-        //
+        //check if block has jpeg headers
         if (buffer[0] == 0xff &&
             buffer[1] == 0xd8 &&
             buffer[2] == 0xff &&
@@ -46,6 +46,8 @@ int main(int argc, char *argv[])
             buffer[3] <= 0xf0)
         {
             count++;
+
+            //
             FILE *image = fopen(filename, "w");
             fwrite(&buffer, 1, blockSize, image);
             fclose(image);
