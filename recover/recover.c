@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     //ensure proper usage
     if(argc != 1)
     {
-        printf("Too many arguments. use ./recover {file}\n");
+        printf("Improper usage. use ./recover {file}\n");
         return 1;
     }
 
