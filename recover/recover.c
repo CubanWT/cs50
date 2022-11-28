@@ -35,10 +35,6 @@ int main(int argc, char *argv[])
     //look through blocks
     while(fread(&buffer, 1, blockSize, file) == blockSize)
     {
-        //format and save filename
-            sprintf(filename, "%03i.jpg", count);
-            count++;
-
         //check if block has jpeg headers
         if (buffer[0] == 0xff &&
             buffer[1] == 0xd8 &&
@@ -46,6 +42,10 @@ int main(int argc, char *argv[])
             buffer[3] >= 0xe0 &&
             buffer[3] <= 0xf0)
         {
+            //format and save filename
+            sprintf(filename, "%03i.jpg", count);
+            count++;
+
             //create image file
             FILE *image = fopen(filename, "w");
 
