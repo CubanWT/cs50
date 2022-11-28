@@ -35,13 +35,13 @@ int main(int argc, char *argv[])
     //look through blocks
     while(fread(&buffer, 1, blockSize, file) == blockSize)
     {
-        count++;
         sprintf(filename, "%03i.jpg", count);
         if (buffer[0] == 0xff &&
             buffer[1] == 0xd8 &&
             buffer[2] == 0xff &&
             (buffer[3] >= 0xe0 && buffer[3] <= 0xf0))
         {
+            count++;
             FILE *image = fopen(filename, "w");
             fwrite(&buffer, 1, blockSize, image);
             fclose(image);
