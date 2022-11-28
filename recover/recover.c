@@ -44,17 +44,31 @@ int main(int argc, char *argv[])
         {
             if (count == 0)
             {
-                
+                //format and save filename
+                sprintf(filename, "%03i.jpg", count);
+                count++;
+
+                //create image file
+                FILE *image = fopen(filename, "w");
+
+                //write jpg in buffer to file
+                fwrite(buffer, 1, blockSize, image);
             }
-            //format and save filename
-            sprintf(filename, "%03i.jpg", count);
-            count++;
+            else
+            {
+                fclose(image);
 
-            //create image file
-            FILE *image = fopen(filename, "w");
+                //format and save filename
+                sprintf(filename, "%03i.jpg", count);
+                count++;
 
-            //write jpg in buffer to file
-            fwrite(buffer, 1, blockSize, image);
+                //create image file
+                FILE *image = fopen(filename, "w");
+
+                //write jpg in buffer to file
+                fwrite(buffer, 1, blockSize, image);
+            }
+
 
             if (image == NULL)
             {
