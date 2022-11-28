@@ -21,12 +21,12 @@ int main(int argc, char *argv[])
     if (file == NULL)
     {
         printf("File cannot be opened.\n");
-        return 2;
+        return 1;
     }
 
     //create buffer
     int blockSize = 512;
-    int *buffer = malloc(blockSize);
+    FILE *buffer = malloc(blockSize);
 
     //store file name and jpeg count
     char *filename = malloc(8 * sizeof(char));
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
        {
         FILE *image = fopen(filename, "w");
         fwrite(image, 1, blockSize, buffer);
-        
+
         fclose(image);
        }
     }
