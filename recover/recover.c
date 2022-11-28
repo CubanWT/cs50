@@ -43,10 +43,10 @@ int main(int argc, char *argv[])
         int currentChar = fgetc(image);
 
         sprintf("%i", currentChar);
-        
+
         if (currentChar == currentChar)
         {
-
+            
         }
     }
 
