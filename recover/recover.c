@@ -38,7 +38,10 @@ int main(int argc, char *argv[])
         count++;
         sprintf(filename, "%03i.jpg", count);
 
-        
+       if (buffer[0] == 0xff &&
+           buffer[1] == 0xd8 &&
+           buffer[2] == 0xff &&
+           ")
     }
 
     fclose(file);
