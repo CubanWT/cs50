@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     //save sample
-    int16_t sample;
+    int16_t *sample = malloc(sizeof(int16_t));
 
     // TODO: Copy header from input file to output file
     fwrite(input, 1, HEADER_SIZE, output);
@@ -45,4 +45,5 @@ int main(int argc, char *argv[])
     // Close files
     fclose(input);
     fclose(output);
+    free(sample);
 }
