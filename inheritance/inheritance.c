@@ -80,7 +80,7 @@ person *create_family(int generations)
 void free_family(person *p)
 {
     // TODO: Handle base case
-    if(p == NULL)
+    if (p == NULL)
     {
         return;
     }
@@ -150,12 +150,12 @@ char random_allele()
 
 char passed_down_allele(person *p, int parent)
 {
-    if(rand() % 2 == 0)
-        {
-            return p->parents[parent]->alleles[0];
-        }
-        else
-        {
-            return p->parents[parent]->alleles[1];
-        }
+    if (rand() % 2 == 0)
+    {
+        return p->parents[parent]->alleles[0];
+    }
+    else
+    {
+        return p->parents[parent]->alleles[1];
+    }
 }
