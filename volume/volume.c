@@ -40,7 +40,10 @@ int main(int argc, char *argv[])
     fwrite(input, 1, HEADER_SIZE, output);
 
     // TODO: Read samples from input file and write updated data to output file
-    while(fread(input, ))
+    while(fread(sample, sizeof(int16_t), 1, input) == sizeof(int16_t))
+    {
+        *sample = sample * 
+    }
 
     // Close files
     fclose(input);
