@@ -20,6 +20,7 @@ person *create_family(int generations);
 void print_family(person *p, int generation);
 void free_family(person *p);
 char random_allele();
+char passed_down_allele(person *p, int parent);
 
 int main(void)
 {
@@ -54,7 +55,8 @@ person *create_family(int generations)
         pNew->parents[1] = parent1;
 
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
-        
+        pNew->alleles[0] = passed_down_allele(pNew, 0);
+        pNew->alleles[1] = passed_down_allele(pNew, 1);
 
     }
 
@@ -78,11 +80,16 @@ person *create_family(int generations)
 void free_family(person *p)
 {
     // TODO: Handle base case
-
+    if(p == NULL)
+    {
+        return;
+    }
     // TODO: Free parents recursively
+    free_family(p->parent[0]);
+    free_family(p->parent[1]);
 
     // TODO: Free child
-
+    free_family(p);
 }
 
 // Print each family member and their alleles.
@@ -139,4 +146,16 @@ char random_allele()
     {
         return 'O';
     }
+}
+
+char passed_down_allele(person *p, int parent)
+{
+    if(rand() % 2 == 0)
+        {
+            return p->parents[parent]->alleles[0];
+        }
+        else
+        {
+            return p->parents[parent]->alleles[1];
+        }
 }
