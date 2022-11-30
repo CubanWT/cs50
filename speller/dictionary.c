@@ -134,8 +134,10 @@ bool load(const char *dictionary)
         //save hash of word
         int index = hash(word);
 
-        //leave next address blank until hashed
-        newNode->next = table[index];
+        //integrate node into linked list
+        node *tmp = table[index];
+
+        newNode->next = tmp;
         table[index] = newNode;
         dictSize++;
     }
