@@ -42,11 +42,12 @@ unsigned int hash(const char *word)
 
     while(word[i] != '\n')
     {
-        total = total + 
+        int letter = word[i] - 'A';
+        total = total + letter;
         i++
     }
 
-    return toupper(word[0]) - 'A';
+    return total;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
