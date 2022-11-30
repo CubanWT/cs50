@@ -26,6 +26,9 @@ node *table[N];
 
 int dictSize = 0;
 
+// function header of freeList
+void freeList(node *thisNode);
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -80,6 +83,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+
     // store each word from dictionary
     char word[LENGTH + 1];
 
@@ -144,6 +148,7 @@ bool unload(void)
     return true;
 }
 
+//frees linked list
 void freeList(node *thisNode)
 {
     if (thisNode == NULL)
