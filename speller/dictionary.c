@@ -37,9 +37,8 @@ bool check(const char *word)
     //get hash of word
     int index = hash(word);
 
-
-
-    return false;
+    //give word and its corresponding node * in table to recursive check
+    return checkList(table[index], word);
 }
 
 // Hashes word to a number
@@ -166,12 +165,16 @@ void freeList(node *thisNode)
     free(thisNode);
 }
 
+//checks linked list recursively
 bool checkList(node *n, char *word)
 {
+    //base case when passed pointer at the end of linked list
     if(n == NULL)
     {
         return false;
     }
+
+    //
     if (strcasecmp(n->word, word) == 0)
     {
         return true;
