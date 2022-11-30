@@ -40,6 +40,7 @@ unsigned int hash(const char *word)
     //declare temp variable
     int i = 0;
 
+    //iterate through each letter 
     while(word[i] != '\n')
     {
         int letter = toupper(word[i]) - 'A';
