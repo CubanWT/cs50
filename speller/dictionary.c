@@ -26,8 +26,9 @@ node *table[N];
 
 int dictSize = 0;
 
-// function header of freeList
+// function headers
 void freeList(node *thisNode);
+bool checkList(node *n, char *word);
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -166,7 +167,7 @@ void freeList(node *thisNode)
 }
 
 //checks linked list recursively
-bool checkList(node *n, char *word)
+bool checkList(node *n, const char *word)
 {
     //base case when passed pointer at the end of linked list
     if(n == NULL)
@@ -174,13 +175,14 @@ bool checkList(node *n, char *word)
         return false;
     }
 
-    //
+    //compare node word to word
     if (strcasecmp(n->word, word) == 0)
     {
         return true;
     }
     else
     {
-        checkList(n->next, word);
+        //recurse to next node
+        return checkList(n->next, word);
     }
 }
