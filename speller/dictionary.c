@@ -131,10 +131,26 @@ bool unload(void)
 
     //counter variable
     int i = 0;
+
+    //iterate through buckets
     while (i < N)
     {
-        table[i]
+        freeList(table[i]);
+
+        //go to next bucket
+        i++;
     }
 
-    return false;
+    return true;
+}
+
+void freeList(node *thisNode)
+{
+    if (thisNode == NULL)
+    {
+        return;
+    }
+
+    freeList(thisNode->next);
+    free(thisNode);
 }
