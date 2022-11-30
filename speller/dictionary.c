@@ -168,5 +168,16 @@ void freeList(node *thisNode)
 
 bool checkList(node *n, char *word)
 {
-    if ()
+    if(n == NULL)
+    {
+        return false;
+    }
+    if (strcasecmp(n->word, word) == 0)
+    {
+        return true;
+    }
+    else
+    {
+        checkList(n->next, word);
+    }
 }
