@@ -29,7 +29,6 @@ int dictSize = 0;
 
 // function headers
 void freeList(node *thisNode);
-bool checkList(node *n, const char *word);
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
