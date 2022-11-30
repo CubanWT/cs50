@@ -65,7 +65,7 @@ unsigned int hash(const char *word)
     // remember length of word
     int length = strlen(word);
 
-    int index = toupper(word) - 'A';
+    unsigned int index = (toupper(word) - 'A');
 
     if (length > 20)
     {
