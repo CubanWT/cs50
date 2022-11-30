@@ -37,7 +37,7 @@ bool check(const char *word)
     //get hash of word
     int index = hash(word);
 
-    
+
 
     return false;
 }
@@ -165,3 +165,5 @@ void freeList(node *thisNode)
     freeList(thisNode->next);
     free(thisNode);
 }
+
+bool 
