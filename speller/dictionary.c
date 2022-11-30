@@ -128,5 +128,13 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+
+    //counter variable
+    int i = 0;
+    while (i < N)
+    {
+        table[i]
+    }
+
     return false;
 }
