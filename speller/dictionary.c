@@ -56,10 +56,14 @@ unsigned int hash(const char *word)
             letter = toupper(word[i]) - 'A';
         }
 
+        //add letter value to total
         total = total + letter;
+
+        //move to next letter
         i++
     }
 
+    //make total overflow back into buckets
     if (total > N)
     {
         total = total % N;
