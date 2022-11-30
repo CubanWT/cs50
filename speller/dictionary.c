@@ -166,4 +166,7 @@ void freeList(node *thisNode)
     free(thisNode);
 }
 
-bool 
+bool checkList(node *n, char *word)
+{
+    if ()
+}
