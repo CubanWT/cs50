@@ -33,6 +33,19 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
+
+    // remember value of all letters added together
+    int total;
+
+    //declare temp variable
+    int i = 0;
+
+    while(word[i] != '\n')
+    {
+        total = total + 
+        i++
+    }
+
     return toupper(word[0]) - 'A';
 }
 
