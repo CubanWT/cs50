@@ -34,7 +34,10 @@ bool check(const char *word)
 {
     // TODO
 
-    char *word_nocase = tolower(*word);
+    //get hash of word
+    int index = hash(word);
+
+    
 
     return false;
 }
