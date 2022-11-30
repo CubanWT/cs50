@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -28,7 +29,7 @@ int dictSize = 0;
 
 // function headers
 void freeList(node *thisNode);
-bool checkList(node *n, char *word);
+bool checkList(node *n, const char *word);
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
