@@ -40,9 +40,10 @@ unsigned int hash(const char *word)
     //declare temp variable
     int i = 0;
 
-    //iterate through each letter 
+    //iterate through each char
     while(word[i] != '\n')
     {
+        //get int value of each char
         int letter = toupper(word[i]) - 'A';
         total = total + letter;
         i++
