@@ -69,15 +69,15 @@ unsigned int hash(const char *word)
 
     if (length > 20)
     {
-        index = index + 3/4 *  N;
+        index = index + 3 / 4 *  N;
     }
     else if (length > 10)
     {
-        index = index + 2/4 * N;
+        index = index + 2 / 4 * N;
     }
     else if (length > 5)
     {
-        index = index + 1/4 * N;
+        index = index + 1 / 4 * N;
     }
     return index;
 }
