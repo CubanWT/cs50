@@ -34,7 +34,7 @@ bool check(const char *word)
 {
     // TODO
 
-    
+    *word = tolower(*word);
 
     return false;
 }
