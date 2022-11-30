@@ -62,42 +62,8 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
 
-    // remember value of all letters added together
-    int total;
 
-    //declare temp variable
-    int i = 0;
-
-    //iterate through each char
-    while(word[i] != '\n')
-    {
-        //declare variable for letter value
-        int letter;
-
-        //get int value of each letter and '
-        if (word[i] == '\'')
-        {
-            letter = 1;
-        }
-        else
-        {
-            letter = toupper(word[i]) - 'A';
-        }
-
-        //add letter value to total
-        total = total + letter;
-
-        //move to next letter
-        i++;
-    }
-
-    //make total overflow back into buckets
-    if (total > N)
-    {
-        total = total % N;
-    }
-
-    return total;
+    return (toupper(word[0]) - 'A');
 }
 
 // Loads dictionary into memory, returning true if successful, else false
