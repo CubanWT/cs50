@@ -33,6 +33,9 @@ void freeList(node *thisNode);
 bool check(const char *word)
 {
     // TODO
+
+    
+
     return false;
 }
 
