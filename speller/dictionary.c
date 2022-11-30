@@ -64,7 +64,7 @@ unsigned int hash(const char *word)
         total = total + letter;
 
         //move to next letter
-        i++
+        i++;
     }
 
     //make total overflow back into buckets
