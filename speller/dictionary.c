@@ -135,9 +135,7 @@ bool load(const char *dictionary)
         int index = hash(word);
 
         //integrate node into linked list
-        node *tmp = table[index];
-
-        newNode->next = tmp;
+        newNode->next = *table[index];
         table[index] = newNode;
         dictSize++;
     }
