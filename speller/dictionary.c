@@ -40,23 +40,36 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    // store each word from dictionary
     char word[LENGTH + 1];
 
+    //open dictionary
     FILE *dict = fopen(dictionary, "r");
     if (dict == NULL)
     {
-        printf("Could not open dictionary.\n");
+        printf("Could not open dictionary!\n");
         return false;
     }
 
+    //iterate through each word in dictionary until end of file
     while (fscanf(dict, "%s", word) != EOF)
     {
+        //make new node for each word
         node *newNode = malloc(sizeof(node));
+        if (newNode == NULL)
+        {
+            printf("Could not create space for new node!\n");
+            return false;
+        }
+
+        //copy scanned word into new node
         strcpy(newNode->word, word);
+
+        //leave next address blank until hashed
         newNode->next = NULL;
     }
 
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
