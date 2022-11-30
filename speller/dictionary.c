@@ -39,10 +39,11 @@ bool load(const char *dictionary)
     // TODO
     char word[LENGTH + 1];
 
-    char *dict = fopen(dictionary, "r");
+    FILE *dict = fopen(dictionary, "r");
     if (dict == NULL)
     {
-
+        printf("Could not open dictionary.\n");
+        return false;
     }
 
     while (fscanf(dictionary, "%s", word) != EOF)
