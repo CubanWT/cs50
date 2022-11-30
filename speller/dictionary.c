@@ -124,6 +124,7 @@ bool load(const char *dictionary)
         if (newNode == NULL)
         {
             printf("Could not create space for new node!\n");
+            fclose(dict);
             return false;
         }
 
@@ -139,6 +140,7 @@ bool load(const char *dictionary)
         dictSize++;
     }
 
+    fclose(dict);
     return true;
 }
 
