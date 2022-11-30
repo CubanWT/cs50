@@ -65,8 +65,12 @@ bool load(const char *dictionary)
         //copy scanned word into new node
         strcpy(newNode->word, word);
 
+        //save hash of word
+        int index = hash(word);
+
         //leave next address blank until hashed
-        newNode->next = NULL;
+        newNode->next = table[index];
+        table[index] = newNode;
     }
 
     return true;
