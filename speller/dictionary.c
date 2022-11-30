@@ -144,7 +144,7 @@ bool unload(void)
     int i = 0;
 
     //iterate through buckets
-    while (i <= N)
+    while (i < N)
     {
         freeList(table[i]);
 
