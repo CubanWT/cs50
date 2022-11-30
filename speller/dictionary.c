@@ -39,7 +39,7 @@ bool load(const char *dictionary)
     // TODO
     char word[LENGTH + 1];
 
-    FILE *dict = fopen(dictionary, "r");
+    char *dict = fopen(dictionary, "r");
     if (dict == NULL)
     {
 
