@@ -37,12 +37,14 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    char word[LENGTH];
+    char word[LENGTH + 1];
 
     dictionary = fopen(dictionary, "r");
     while (fscanf(dictionary, "%s", word) != EOF)
     {
-        
+        node newNode = malloc(sizeof(node));
+        newNode->word = word;
+        newNode->next = NULL;
     }
 
     return false;
