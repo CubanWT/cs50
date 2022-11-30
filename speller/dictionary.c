@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
@@ -49,7 +50,7 @@ bool load(const char *dictionary)
     while (fscanf(dictionary, "%s", word) != EOF)
     {
         node newNode = malloc(sizeof(node));
-        newNode->word = word;
+        cpystr(newNode->word, word);
         newNode->next = NULL;
     }
 
