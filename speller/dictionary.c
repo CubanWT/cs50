@@ -22,6 +22,10 @@ const unsigned int N = 500;
 // Hash table
 node *table[N];
 
+//size tracker
+
+int dictSize = 0;
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -107,6 +111,7 @@ bool load(const char *dictionary)
         //leave next address blank until hashed
         newNode->next = table[index];
         table[index] = newNode;
+        dictSize++;
     }
 
     return true;
@@ -116,7 +121,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return dictSize;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
