@@ -39,8 +39,23 @@ bool check(const char *word)
     //get hash of word
     int index = hash(word);
 
-    
+    //intialize cursor to first item in linked list
+    node *cursor = table[index];
 
+    while (cursor != NULL)
+    {
+        if (strcasecmp(cursor->word, word) == 0)
+        {
+            return true;
+        }
+        else
+        {
+            cursor = cursor->next;
+        }
+    }
+
+    //return false if no value in linked list matches word
+    return false;
 }
 
 // Hashes word to a number
