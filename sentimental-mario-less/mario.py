@@ -6,4 +6,6 @@ while True:
         break
 
 for i in range(input):
-    print("#" * (i + 1))
+    n = i + 1
+    print(" " * (input - n))
+    print("#" * (n))
