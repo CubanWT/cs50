@@ -8,4 +8,4 @@ while True:
 for i in range(input):
     n = i + 1
     print(" " * (input - n), end="")
-    print("#" * (n))
+    print("#" * n)
