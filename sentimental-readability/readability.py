@@ -16,8 +16,8 @@ for c in input.lower():
         s += 1
 
 # Calculate readability index and print
-l = l / (w * 100)
-s = s / (w * 100)
+l = l / w * 100
+s = s / w * 100
 index = int(0.0588 * l - 0.296 * s - 15.8)
 
 if index < 1:
