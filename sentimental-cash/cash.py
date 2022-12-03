@@ -1,7 +1,11 @@
 from cs50 import get_float
 
 # Get input
-usript = get_float("How much change? ")
+while True:
+    usript = get_float("How much change? ")
+    if usript > 0:
+        break
+    print("Invalid amount of change!")
 
 # Keep track of coins
 coins = {
