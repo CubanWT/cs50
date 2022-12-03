@@ -1,4 +1,12 @@
-from cs50 import get_int
+from cs50 import get_float
 
-input = get_int("How much change? ")
+input = get_float("How much change? ")
+
+coins = {
+    "quarters",
+    "dimes",
+    "nickels",
+    "pennies",
+}
+
 
