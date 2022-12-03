@@ -7,5 +7,10 @@ s = 0
 l = 0
 w = 0
 
-for c in input:
-    if c 
+for c in input.lower:
+    if c >= "a" and c <= "z":
+        l += 1
+    elif c == " ":
+        w += 1
+    else
+        s += 1
