@@ -12,4 +12,4 @@ coins = {
 }
 
 coins.quarters = int(usript / 0.25)
-usript -=
+usript -= coins.quarters * 0.25;
