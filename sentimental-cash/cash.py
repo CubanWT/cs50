@@ -2,7 +2,7 @@ from cs50 import get_float
 
 # Get input
 while True:
-    usript = get_float("How much change? ")
+    usript = round(get_float("How much change? "), 2)
     if usript > 0:
         break
     print("Invalid amount of change!")
