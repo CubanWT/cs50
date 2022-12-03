@@ -1,7 +1,7 @@
 from cs50 import get_float
 
 # Get input
-input = get_float("How much change? ")
+usript = get_float("How much change? ")
 
 # Keep track of coins
 coins = {
@@ -11,6 +11,5 @@ coins = {
     "pennies": 0,
 }
 
-coins.quarters = input / 0.25
-
-main();
+coins.quarters = int(usript / 0.25)
+usript -=
