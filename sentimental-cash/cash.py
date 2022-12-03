@@ -25,3 +25,7 @@ usript -= coins.nickels * 0.05
 
 # Calculate pennies
 coins.pennies = int(usript / 0.01)
+
+total = coins.pennies + coins.quarters + coins.nickels + coins.dimes
+
+print(total)
