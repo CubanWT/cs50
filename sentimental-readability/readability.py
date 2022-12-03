@@ -8,7 +8,7 @@ l = 0
 w = 0
 
 # Parse string for letters, words, and sentences
-for c in input.lower().lstrip():
+for c in input.lower():
     if c >= "a" and c <= "z":
         l += 1
     elif c == " ":
