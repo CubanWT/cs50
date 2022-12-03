@@ -12,7 +12,7 @@ for c in input.lower():
         l += 1
     elif c == " ":
         w += 1
-    else:
+    elif c == "." or "?" or "!":
         s += 1
 
 # Calculate readability index and print
