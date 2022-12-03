@@ -15,9 +15,6 @@ coins = {
     "pennies": 0,
 }
 
-# Note: I kept getting floating point imprecision when dealing with float values,
-# so each 
-
 # Calculate quarters
 coins["quarters"] = usript // 0.25
 usript = round(usript - coins["quarters"] * 0.25, 2)
