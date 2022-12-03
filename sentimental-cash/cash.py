@@ -20,8 +20,8 @@ coins["quarters"] = int(usript / 0.25)
 usript -= coins["quarters"] * 0.25
 
 # Calculate dimes
-coins["dimes"] = int(usript / 0.1)
-usript -= coins["dimes"] * 0.1
+coins["dimes"] = int(usript / 0.10)
+usript -= coins["dimes"] * 0.10
 
 # Calculate nickels
 coins["nickels"] = int(usript / 0.05)
