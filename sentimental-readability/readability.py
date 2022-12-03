@@ -13,7 +13,7 @@ for c in input.lower().lstrip():
         l += 1
     elif c == " ":
         w += 1
-    elif c == "." or "?" or "!":
+    elif c == "." or c == "?" or c == "!":
         s += 1
 
 # Calculate readability index
