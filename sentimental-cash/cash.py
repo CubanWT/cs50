@@ -11,5 +11,5 @@ coins = {
     "pennies": 0,
 }
 
-if input % 25 = 0:
+def main()
     
