@@ -12,20 +12,20 @@ coins = {
 }
 
 # Calculate quarters
-coins.quarters = int(usript / 0.25)
-usript -= coins.quarters * 0.25
+coins["quarters"] = int(usript / 0.25)
+usript -= coins["quarters"] * 0.25
 
 # Calculate dimes
-coins.dimes = int(usript / 0.1)
-usript -= coins.dimes * 0.1
+coins["dimes"] = int(usript / 0.1)
+usript -= coins["dimes"] * 0.1
 
 # Calculate nickels
-coins.nickels = int(usript / 0.05)
-usript -= coins.nickels * 0.05
+coins["nickels"] = int(usript / 0.05)
+usript -= coins["nickels"] * 0.05
 
 # Calculate pennies
-coins.pennies = int(usript / 0.01)
+coins["pennies"] = int(usript / 0.01)
 
-total = coins.pennies + coins.quarters + coins.nickels + coins.dimes
+total = coins["pennies"] + coins["quarters"] + coins["nickels"] + coins["dimes"]
 
 print(total)
