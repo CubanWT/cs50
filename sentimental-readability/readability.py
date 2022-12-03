@@ -7,7 +7,7 @@ s = 0
 l = 0
 w = 0
 
-# Parse string for words, letters, and sentences
+# Parse string for letters, words, and sentences
 for c in input.lower().lstrip():
     if c >= "a" and c <= "z":
         l += 1
