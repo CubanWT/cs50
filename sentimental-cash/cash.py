@@ -32,4 +32,4 @@ coins["pennies"] = int(usript / 0.01)
 
 total = coins["pennies"] + coins["quarters"] + coins["nickels"] + coins["dimes"]
 
-print(total)
+print(coins)
