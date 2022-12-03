@@ -11,5 +11,6 @@ coins = {
     "pennies": 0,
 }
 
-def main()
-    
+coins.quarters = input / 0.25
+
+main();
