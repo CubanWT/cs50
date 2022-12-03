@@ -2,7 +2,7 @@ from cs50 import get_int
 
 while True:
     input = get_int("Height: ")
-    if (input > 0 & input < 9):
+    if (input > 0 and input < 9):
         break
     print("Height must be between 1 and 8 inclusive!")
 
