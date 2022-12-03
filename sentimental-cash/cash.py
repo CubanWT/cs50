@@ -15,6 +15,13 @@ coins = {
 coins.quarters = int(usript / 0.25)
 usript -= coins.quarters * 0.25
 
-# Calculate dimes (like my gf)
+# Calculate dimes
 coins.dimes = int(usript / 0.1)
 usript -= coins.dimes * 0.1
+
+# Calculate nickels
+coins.nickels = int(usript / 0.05)
+usript -= coins.nickels * 0.05
+
+# Calculate pennies
+coins.pennies = int(usript / 0.01)
