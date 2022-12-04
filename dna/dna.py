@@ -8,10 +8,10 @@ def main():
         print("Incorrect usage! use dna.py {CSV data} {DNA text file}")
 
     # TODO: Read database file into a variable
-    
-
+    db = open(arv[1], "r")
 
     # TODO: Read DNA sequence file into a variable
+    sqc = open(arv[2], "r")
 
     # TODO: Find longest match of each STR in DNA sequence
 
