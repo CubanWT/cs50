@@ -5,7 +5,7 @@ input = get_string("Text: ")
 
 s = 0
 l = 0
-w = 0
+w = 1
 
 # Parse string for letters, words, and sentences
 for c in input.lower():
