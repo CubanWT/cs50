@@ -3,22 +3,22 @@ from cs50 import get_string
 # Get user input
 input = get_string("Text: ")
 
-s = 0
-l = 0
-w = 1
+sentences = 0
+letters = 0
+words = 1
 
 # Parse string for letters, words, and sentences
 for c in input.lower():
     if c >= "a" and c <= "z":
-        l += 1
+        letters += 1
     elif c == " ":
-        w += 1
+        words += 1
     elif c == "." or c == "?" or c == "!":
-        s += 1
+        sentences += 1
 
 # Calculate readability index
-l = l / w * 100
-s = s / w * 100
+l = letters / words * 100
+s = sentences / words * 100
 index = int(0.0588 * l - 0.296 * s - 15.8)
 
 #print index
