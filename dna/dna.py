@@ -4,7 +4,8 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-
+    if len(sys.argv) != 2:
+        print("Incorrect usage! use dna.py {CSV data}")
     # TODO: Read database file into a variable
 
     # TODO: Read DNA sequence file into a variable
