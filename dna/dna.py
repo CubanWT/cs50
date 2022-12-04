@@ -9,8 +9,8 @@ def main():
 
     # TODO: Read database file into a variable
     with open(argv[1], "r") as file:
+        reader = csv.reader(file)
         
-
 
     # TODO: Read DNA sequence file into a variable
     sqc = open(arv[2], "r")
