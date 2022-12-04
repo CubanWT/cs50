@@ -14,7 +14,6 @@ for c in input.lower():
     elif c == " ":
         w += 1
     elif c == "." or c == "?" or c == "!":
-        w += 1
         s += 1
 
 # Calculate readability index
