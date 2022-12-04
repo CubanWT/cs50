@@ -21,7 +21,7 @@ l = letters / words * 100
 s = sentences / words * 100
 index = round(0.0588 * l - 0.296 * s - 15.8)
 
-#print index
+# Print index
 if index < 1:
     print("Before Grade 1")
 elif index > 16:
