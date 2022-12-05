@@ -8,6 +8,8 @@ def main():
         print("Incorrect usage! use dna.py {CSV data} {DNA text file}")
 
     # TODO: Read database file into a variable
+    db = {}
+
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
 
