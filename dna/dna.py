@@ -42,7 +42,7 @@ def check_matches(STRs, db)
     matchFound = False
     for key in STRs.keys():
         for person in db:
-
+            
 
     if matchFound == False:
         print("No match")
