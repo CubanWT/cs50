@@ -32,12 +32,12 @@ def main():
     matchFound = False
     for key in STRs.keys():
         for person in db:
-            if person[key] == STRs[key]:
+            if person.get(key) == STRs.get(key):
                 print(person['name'])
                 matchFound = True
     if matchFound == False:
         print("No match")
-        
+
     return
 
 
