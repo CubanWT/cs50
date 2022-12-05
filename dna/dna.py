@@ -29,12 +29,15 @@ def main():
         STRs[keys] = longest_match(sqc, keys)
 
     # TODO: Check database for matching profiles
-    isMatching = False
-    for keys in STRs.keys():
+    matchFound = False
+    for key in STRs.keys():
         for person in db:
-            
-
-
+            if person[key] == STRs[key]:
+                print(person['name'])
+                matchFound = True
+    if matchFound == False:
+        print("No match")
+        
     return
 
 
