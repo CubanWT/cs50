@@ -24,7 +24,6 @@ def main():
     STRs = list(db[0].keys())
     STRs.remove('name')
     STRs = dict.fromkeys(STRs, 0)
-    print(STRs)
 
 
     # TODO: Check database for matching profiles
