@@ -25,6 +25,7 @@ def main():
     STRs.remove('name')
     STRs = dict.fromkeys(STRs, 0)
 
+    
 
     # TODO: Check database for matching profiles
 
