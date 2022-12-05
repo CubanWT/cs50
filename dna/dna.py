@@ -21,7 +21,7 @@ def main():
         sqc = file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    STRs = db[0].keys()
+    STRs = db[0][1:].keys()
 
     # TODO: Check database for matching profiles
 
