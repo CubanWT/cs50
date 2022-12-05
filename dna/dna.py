@@ -18,7 +18,8 @@ def main():
             del db[row["name"]]["name"]
 
     # TODO: Read DNA sequence file into a variable
-    
+    with open(sys.argv[2], 'r') as file:
+        
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
