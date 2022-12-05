@@ -29,7 +29,7 @@ def main():
         STRs[keys] = longest_match(sqc, keys)
 
     # TODO: Check database for matching profiles
-    isMatching = false
+    isMatching = False
     for keys in STRs.keys():
         
 
