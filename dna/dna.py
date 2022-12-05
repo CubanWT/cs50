@@ -23,7 +23,9 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     STRs = list(db[0].keys())
     STRs.remove('name')
+    STRs = dict.fromkeys(STRs, 0)
     
+
 
     # TODO: Check database for matching profiles
 
