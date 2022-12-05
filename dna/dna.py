@@ -27,9 +27,10 @@ def main():
 
     for keys in STRs.keys():
         STRs[keys] = longest_match(sqc, keys)
-    print(STRs)
 
     # TODO: Check database for matching profiles
+    
+
 
     return
 
