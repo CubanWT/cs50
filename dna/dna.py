@@ -18,7 +18,8 @@ def main():
 
         for sub in db:
             for key in sub:
-                sub[key] = int(sub[key])
+                if key != 'name':
+                    sub[key] = int(sub[key])
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], 'r') as file:
