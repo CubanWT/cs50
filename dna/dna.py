@@ -15,7 +15,6 @@ def main():
 
         for row in reader:
             db[row["name"]] = row
-            del db[row["name"]]["name"]
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], 'r') as file:
