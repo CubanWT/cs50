@@ -24,7 +24,8 @@ def main():
     STRs = {}
 
     for item in db[0]:
-        
+        db[0]['name'].popitem
+        STRs
 
     # TODO: Check database for matching profiles
 
