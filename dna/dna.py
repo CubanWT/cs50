@@ -22,7 +22,7 @@ def main():
         sqc = file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-
+    
     # TODO: Check database for matching profiles
 
     return
