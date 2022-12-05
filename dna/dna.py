@@ -15,8 +15,7 @@ def main():
 
         for row in reader:
             db[row["name"]] = row
-            db[row["name"]]["name"].popitem()
-        print(db)
+            del db[row["name"]]["name"]
 
     # TODO: Read DNA sequence file into a variable
 
