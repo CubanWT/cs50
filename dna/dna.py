@@ -21,9 +21,12 @@ def main():
         sqc = file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+    STRs = {
+        "AGAT": 0,
+        "AATG": 0,
+        
+    }
 
-    for person in db:
-        person.
     # TODO: Check database for matching profiles
 
     return
