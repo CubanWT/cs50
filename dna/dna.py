@@ -34,18 +34,29 @@ def main():
         STRs[keys] = longest_match(sqc, keys)
 
     # TODO: Check database for matching profiles
-    print(check_matches())
-    return
-
-
-def check_matches(STRs, db)
     matchFound = False
-    for key in STRs.keys():
-        for person in db:
-            
 
+    # Iterate through every person in database
+    for person in db:
+
+        # Keep track of matches
+        matches = 0
+
+        # Iterate through every STR in STR dict
+        for key in STRs.keys():
+            if STRs[key] == person[key]:
+                matches += 1
+
+        # If all STRs match, then print person's name
+        if matches == len(STRs):
+            matchFound = True
+            print(person['name'])
+
+    # If no matches were found then print no match
     if matchFound == False:
         print("No match")
+
+    return
 
 
 def longest_match(sequence, subsequence):
