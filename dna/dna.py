@@ -8,24 +8,23 @@ def main():
         print("Incorrect usage! use dna.py {CSV data} {DNA text file}")
 
     # TODO: Read database file into a variable
-    db = {}
+    db = []
 
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
 
         for row in reader:
-            db[row["name"]] = row
+            db[row] = row
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], 'r') as file:
         sqc = file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    STRs = {
-        "AGAT": 0,
-        "AATG": 0,
+    STRs = {}
+
+    for item in db[0]:
         
-    }
 
     # TODO: Check database for matching profiles
 
