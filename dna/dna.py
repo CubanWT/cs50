@@ -31,7 +31,8 @@ def main():
     # TODO: Check database for matching profiles
     isMatching = False
     for keys in STRs.keys():
-        
+        for person in db:
+            
 
 
     return
