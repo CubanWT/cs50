@@ -123,3 +123,4 @@ AND name IN (
 
 --find associate
 SELECT name FROM people
+JOIN 
