@@ -146,15 +146,3 @@ CREATE TABLE bakery_security_logs (
 +-------------------+---------------+
 | LaGuardia Airport | New York City |
 +-------------------+---------------+
-+--------+
-|  name  |
-+--------+
-| Doris  |
-| Sofia  |
-| Bruce  |
-| Edward |
-| Kelsey |
-| Taylor |
-| Kenny  |
-| Luca   |
-+--------+
