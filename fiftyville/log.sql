@@ -6,6 +6,9 @@
 -- to understand what the crime_scene_reports table stores
 -- This was outputted into a txt file for better readability
 SELECT * FROM crime_scene_reports
+WHERE year = 2021
+AND month = 7
+AND day = 28;
 
 -- get interviews from crime scene report
 -- this was outputted into txt file for better readability
