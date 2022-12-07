@@ -68,5 +68,14 @@ SELECT name FROM people
 JOIN passengers ON passengers.passport_number = people.passport_number
 JOIN flights ON flights.id = passengers.flight_id
 WHERE flight_id = (
-    SELECT 
+    SELECT id FROM flights
+    WHERE year = 2021
+    AND month = 7
+    AND day = 29
+    ORDER BY hour ASC
+    LIMIT 1
 )
+
+--find suspect
+SELECT name FROM people
+WHERE
