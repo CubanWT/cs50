@@ -84,7 +84,18 @@ AND name IN (
 
 --current suspects: Bruce, Diana
 
---check for associate's flight purchase and cross reference with suspect phone  numbers
+--find earliest flight from the next day
+SELECT full_name, city FROM airports
+WHERE id = (
+    SELECT destination_airport_id FROM flights
+    WHERE year = 2021
+    AND month = 7
+    AND day = 29
+    ORDER BY hour ASC
+    LIMIT 1
+);
+
+--check for passengers on flight and cross reference
 SELECT name FROM people
 JOIN passengers ON passengers.passport_number = people.passport_number
 JOIN flights ON flights.id = passengers.flight_id
@@ -98,15 +109,4 @@ AND name IN (
     AND month = 7
     AND day = 28
     AND duration < 60
-);
-
---find earliest flight from the next day
-SELECT full_name, city FROM airports
-WHERE id = (
-    SELECT destination_airport_id FROM flights
-    WHERE year = 2021
-    AND month = 7
-    AND day = 29
-    ORDER BY hour ASC
-    LIMIT 1
 );

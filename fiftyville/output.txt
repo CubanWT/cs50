@@ -130,16 +130,6 @@ CREATE TABLE bakery_security_logs (
 | Bruce |
 | Diana |
 +-------+
-+--------+
-|  name  |
-+--------+
-| Diana  |
-| Sofia  |
-| Bruce  |
-| Kelsey |
-| Taylor |
-| Kenny  |
-+--------+
 +-------------------+---------------+
 |     full_name     |     city      |
 +-------------------+---------------+
