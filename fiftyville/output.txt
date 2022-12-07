@@ -116,28 +116,33 @@ CREATE TABLE bakery_security_logs (
 | Diana   |
 | Kelsey  |
 +---------+
-+--------+
-|  name  |
-+--------+
-| Sofia  |
-| Kelsey |
-| Bruce  |
-| Diana  |
-+--------+
-+-------+
-| name  |
-+-------+
-| Bruce |
-| Diana |
-+-------+
++---------+
+|  name   |
++---------+
+| Sofia   |
+| Kelsey  |
+| Bruce   |
+| Kelsey  |
+| Taylor  |
+| Diana   |
+| Carina  |
+| Kenny   |
+| Benista |
++---------+
++---------+
+|  name   |
++---------+
+| Bruce   |
+| Diana   |
+| Brooke  |
+| Kenny   |
+| Iman    |
+| Luca    |
+| Taylor  |
+| Benista |
++---------+
 +-------------------+---------------+
 |     full_name     |     city      |
 +-------------------+---------------+
 | LaGuardia Airport | New York City |
 +-------------------+---------------+
-+-------+
-| name  |
-+-------+
-| Diana |
-| Bruce |
-+-------+

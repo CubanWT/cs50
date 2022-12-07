@@ -35,7 +35,7 @@ AND minute <= 25
 AND activity = "exit";
 
 --check calls for thief's call to associate
-SELECT DISTINCT name from people
+SELECT name from people
 JOIN phone_calls ON phone_calls.caller = people.phone_number
 WHERE year = 2021
 AND month = 7
@@ -63,38 +63,4 @@ WHERE id = (
     LIMIT 1
 );
 
---check for passengers on flight and cross reference
-SELECT name FROM people
-JOIN passengers ON passengers.passport_number = people.passport_number
-JOIN flights ON flights.id = passengers.flight_id
-WHERE year = 2021
-AND month = 7
-AND day = 29
-AND name IN (
-    SELECT name FROM people
-    JOIN bank_accounts ON people.id = bank_accounts.person_id
-    JOIN atm_transactions ON atm_transactions.account_number = bank_accounts.account_number
-    WHERE atm_location = "Leggett Street"
-    AND year = 2021
-    AND month = 7
-    AND day = 28
-    AND transaction_type = "withdraw"
-)
-AND name IN (
-    SELECT DISTINCT name from people
-    JOIN phone_calls ON phone_calls.caller = people.phone_number
-    WHERE year = 2021
-    AND month = 7
-    AND day = 28
-    AND duration < 60
-    AND people.license_plate IN (
-        SELECT license_plate FROM bakery_security_logs
-        WHERE year = 2021
-        AND month = 7
-        AND day = 28
-        AND hour = 10
-        AND minute >= 15
-        AND minute <= 25
-        AND activity = "exit"
-    )
-);
+--check for passengers on flight
