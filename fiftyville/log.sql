@@ -84,4 +84,19 @@ AND name IN (
 
 --current suspects: Bruce, Diana
 
---check for associate's flight purchase
+--check for associate's flight purchase and cross reference with suspect phone  numbers
+SELECT name FROM people
+JOIN passengers ON passengers.passport_number = people.passport_number
+JOIN flights ON flights.id = passengers.flight_id
+WHERE year = 2021
+AND month = 7
+AND day = 29
+AND name IN (
+    SELECT name from people
+    JOIN phone_calls ON people.phone_number = phone_calls.receiver
+    WHERE caller IN (
+        SELECT phone_number FROM people
+        WHERE name = "Bruce"
+        OR name = "Diana"
+    )
+);
