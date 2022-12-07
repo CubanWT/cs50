@@ -66,4 +66,7 @@ WHERE id = (
 --check for passengers on flight
 SELECT name FROM people
 JOIN passengers ON passengers.passport_number = people.passport_number
-JOIN 
+JOIN flights ON flights.id = passengers.flight_id
+WHERE flight_id = (
+    SELECT 
+)
