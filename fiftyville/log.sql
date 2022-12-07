@@ -64,3 +64,5 @@ WHERE id = (
 );
 
 --check for passengers on flight
+SELECT name FROM people
+JOIN 
