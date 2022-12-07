@@ -30,3 +30,5 @@ WHERE year = 2021
 AND month = 7
 AND day = 29
 ORDER BY hour, minute;
+
+--id of earliest flight is 36
