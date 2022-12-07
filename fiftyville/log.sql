@@ -64,3 +64,4 @@ AND day = 28
 AND duration < 60;
 
 --check bakery security footage
+SELECT
