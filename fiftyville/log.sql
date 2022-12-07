@@ -45,4 +45,7 @@ WHERE id = (
 --check ATM for thief
 SELECT name FROM people
 JOIN bank_accounts ON bank_accounts.person_id = people.id
-JOIN atm_transactions ON 
+WHERE id = (
+    SELECT person_id FROM bank_accounts
+    
+)
