@@ -19,6 +19,7 @@ AND day = 28
 AND transcript LIKE "%bakery%";
 
 --thief plans on taking the earliest flight on 29/7/2021
+--
 --thief withdrew money before 10:15 AM on 28/7/2021 from ATM on Leggett Street
 --thief left in a car seen by bakery security footage within ten minutes of crime (10:15 AM)
 
