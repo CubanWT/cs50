@@ -104,9 +104,6 @@ AND month = 7
 AND day = 29
 AND name IN (
     SELECT name from people
-    JOIN phone_calls ON people.phone_number = phone_calls.caller
-    WHERE year = 2021
-    AND month = 7
-    AND day = 28
-    AND duration < 60
+    WHERE name = "Bruce"
+    OR name = "Diana"
 );
