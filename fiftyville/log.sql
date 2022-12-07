@@ -40,7 +40,9 @@ WHERE id = (
     WHERE id = 36
 );
 
---Thief flew to LaGuardia Airport in New York City
+--**Thief flew to LaGuardia Airport in New York City**
 
 --check ATM for thief
-SELECT 
+SELECT name FROM people
+JOIN bank_accounts ON bank_accounts.person_id = people.id
+JOIN atm_transactions ON 
