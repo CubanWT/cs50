@@ -43,7 +43,7 @@ WHERE id = (
 --**Thief flew to LaGuardia Airport in New York City**
 
 --check ATM for thief
-SELECT name FROM people
+SELECT name, passport_number FROM people
 JOIN bank_accounts ON bank_accounts.person_id = people.id
 JOIN atm_transactions ON atm_transactions.account_number = bank_accounts.account_number
 WHERE bank_accounts.account_number = (
@@ -52,3 +52,5 @@ WHERE bank_accounts.account_number = (
     AND month = 7
     AND day = 28
 );
+
+--returns "Amanda" 
