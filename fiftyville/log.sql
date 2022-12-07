@@ -33,4 +33,6 @@ AND minute >= 15
 AND minute <= 25;
 
 --check ATM withdrawls before time in interview
-SELECT 
+SELECT name FROM people
+JOIN bank_accounts ON people.id = bank_accounts.person_id
+JOIN atm_transactions ON atm_transactions.account_number = bank_accounts.account_number
