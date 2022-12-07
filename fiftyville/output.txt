@@ -128,3 +128,12 @@ CREATE TABLE bakery_security_logs (
 | Taylor  |
 | Benista |
 +---------+
++--------+
+|  name  |
++--------+
+| Sofia  |
+| Kelsey |
+| Bruce  |
+| Kelsey |
+| Diana  |
++--------+

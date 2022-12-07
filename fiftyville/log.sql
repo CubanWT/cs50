@@ -23,7 +23,7 @@ AND transcript LIKE "%bakery%";
 --thief withdrew money before 10:15 AM on 28/7/2021 from ATM on Leggett Street
 --thief left in a car seen by bakery security footage within ten minutes of crime (10:15 AM)
 
---check bakery security logs for owner of car leaving
+--check bakery security logs for thief leaving
 SELECT bakery_security_logs.activity, people.name FROM bakery_security_logs
 JOIN people ON people.license_plate = bakery_security_logs.license_plate
 WHERE year = 2021
@@ -45,4 +45,17 @@ AND transaction_type = "withdraw";
 
 --check calls for thief's call to associate
 SELECT name from people
-JOIN phone_calls ON
+JOIN phone_calls ON phone_calls.caller = people.phone_number
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND duration < 60
+AND people.license_plate IN (
+    SELECT license_plate FROM bakery_security_logs
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND hour = 10
+    AND minute >= 15
+    AND minute <= 25
+);
