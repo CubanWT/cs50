@@ -113,5 +113,20 @@ AND name IN (
     AND transaction_type = "withdraw"
 )
 AND name IN (
-    
+    SELECT DISTINCT name from people
+JOIN phone_calls ON phone_calls.caller = people.phone_number
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND duration < 60
+AND people.license_plate IN (
+    SELECT license_plate FROM bakery_security_logs
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND hour = 10
+    AND minute >= 15
+    AND minute <= 25
+    AND activity = "exit"
+);
 )
