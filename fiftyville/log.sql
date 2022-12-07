@@ -25,3 +25,8 @@ WHERE id = 295);
 --thief left in a car seen by bakery security footage within ten minutes of crime (10:15 AM)
 
 --check for thief's flight
+SELECT * FROM flights
+WHERE year = 2021
+AND month = 7
+AND day = 29
+ORDER BY hour, minute;
