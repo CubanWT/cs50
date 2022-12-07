@@ -18,8 +18,8 @@ AND month = 7
 AND day = 28
 AND transcript LIKE "%bakery%";
 
---thief plans on taking the earliest flight on 29/7/2021
---
+--thief's associate purchased plane ticket for earliest flight on 29/7/2021
+--thief was on the phone with their associate for less than a minute post robbery
 --thief withdrew money before 10:15 AM on 28/7/2021 from ATM on Leggett Street
 --thief left in a car seen by bakery security footage within ten minutes of crime (10:15 AM)
 
@@ -42,3 +42,7 @@ AND year = 2021
 AND month = 7
 AND day = 28
 AND transaction_type = "withdraw";
+
+--check calls for thief's call to associate
+SELECT name from people
+JOIN phone_calls ON
