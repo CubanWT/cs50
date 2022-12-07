@@ -78,4 +78,27 @@ WHERE flight_id = (
 
 --find suspect
 SELECT name FROM people
-WHERE
+WHERE name IN (
+    SELECT name FROM people
+JOIN passengers ON passengers.passport_number = people.passport_number
+JOIN flights ON flights.id = passengers.flight_id
+WHERE flight_id = (
+    SELECT id FROM flights
+    WHERE year = 2021
+    AND month = 7
+    AND day = 29
+    ORDER BY hour ASC
+    LIMIT 1
+)
+)
+AND name IN (
+    SELECT full_name, city FROM airports
+WHERE id = (
+    SELECT destination_airport_id FROM flights
+    WHERE year = 2021
+    AND month = 7
+    AND day = 29
+    ORDER BY hour ASC
+    LIMIT 1
+);
+)
