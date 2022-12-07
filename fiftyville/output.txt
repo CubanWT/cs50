@@ -136,3 +136,8 @@ CREATE TABLE bakery_security_logs (
 | Thomas |
 | Pamela |
 +--------+
++-------------------+---------------+
+|     full_name     |     city      |
++-------------------+---------------+
+| LaGuardia Airport | New York City |
++-------------------+---------------+

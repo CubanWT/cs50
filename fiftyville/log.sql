@@ -100,3 +100,14 @@ AND name IN (
         OR name = "Diana"
     )
 );
+
+--find earliest flight from the next day
+SELECT full_name, city FROM airports
+WHERE id = (
+    SELECT destination_airport_id FROM flights
+    WHERE year = 2021
+    AND month = 7
+    AND day = 29
+    ORDER BY hour ASC
+    LIMIT 1
+);
