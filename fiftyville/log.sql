@@ -120,3 +120,6 @@ AND name IN (
     AND minute <= 25
     AND activity = "exit"
 )
+
+--find associate
+SELECT name FROM people
