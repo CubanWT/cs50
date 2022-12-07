@@ -42,3 +42,5 @@ WHERE id = (
 
 --Thief flew to LaGuardia Airport in New York City
 
+--check ATM for thief
+SELECT 
