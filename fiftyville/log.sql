@@ -45,7 +45,7 @@ AND day = 28
 AND transaction_type = "withdraw";
 
 --check calls for thief's call to associate and cross reference with people who left parking lot
-SELECT name from people
+SELECT DISTINCT name from people
 JOIN phone_calls ON phone_calls.caller = people.phone_number
 WHERE year = 2021
 AND month = 7
@@ -61,3 +61,6 @@ AND people.license_plate IN (
     AND minute <= 25
     AND activity = "exit"
 );
+
+--current suspects: Sofia, Kelsey, Bruce, Diana
+
