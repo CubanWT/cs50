@@ -22,3 +22,4 @@ AND transcript LIKE "%bakery%";
 --thief withdrew money before 10:15 AM on 28/7/2021 from ATM on Leggett Street
 --thief left in a car seen by bakery security footage within ten minutes of crime (10:15 AM)
 
+--check bakery security logs for owner of car leaving
