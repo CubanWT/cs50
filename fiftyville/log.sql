@@ -45,7 +45,10 @@ WHERE id = (
 --check ATM for thief
 SELECT name FROM people
 JOIN bank_accounts ON bank_accounts.person_id = people.id
-WHERE id = (
-    SELECT person_id FROM bank_accounts
-    
-)
+JOIN atm_transactions ON atm_transactions.account_number = bank_accounts.account_number
+WHERE account_number = (
+    SELECT account_number FROM atm_transactions
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+);
