@@ -32,4 +32,4 @@ AND hour = 10
 AND minute >= 15
 AND minute <= 25;
 
---check ATM withdrawls before time in interview 
+--check ATM withdrawls before time in interview
