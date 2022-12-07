@@ -23,3 +23,11 @@ AND transcript LIKE "%bakery%";
 --thief left in a car seen by bakery security footage within ten minutes of crime (10:15 AM)
 
 --check bakery security logs for owner of car leaving
+SELECT bakery_security_logs.activity, people.name FROM bakery_security_logs
+JOIN people ON people.license_plate = bakery_security_logs.license_plate
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND hour = 10
+AND minute >= 15
+AND minute <= 25;
