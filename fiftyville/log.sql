@@ -7,4 +7,14 @@
 -- This was outputted into a txt file for better readability
 SELECT * FROM crime_scene_reports
 
--- get interviews from c
+-- get interviews from crime scene report
+SELECT * FROM interviews
+   ...> WHERE year = (SELECT year
+   ...> FROM crime_scene_reports
+   ...> WHERE id = 295) AND
+   ...> month = (SELECT month
+   ...> FROM crime_scene_reports
+   ...> WHERE id = 295) AND
+   ...> day = (SELECT day
+   ...> FROM crime_scene_reports
+   ...> WHERE id = 295);
