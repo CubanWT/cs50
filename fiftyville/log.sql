@@ -32,3 +32,8 @@ AND day = 29
 ORDER BY hour, minute;
 
 --id of earliest flight is 36
+
+--find destination of flight
+SELECT full_name, city FROM airports
+JOIN flights ON flights.destination_airport_id = airports.id
+WHERE id = 
