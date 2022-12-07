@@ -163,3 +163,18 @@ CREATE TABLE bakery_security_logs (
 +-------+
 | Bruce |
 +-------+
++-----------+
+|   name    |
++-----------+
+| Pamela    |
+| Joseph    |
+| Tyler     |
+| Thomas    |
+| Robin     |
+| Deborah   |
+| Gregory   |
+| Carl      |
+| Charlotte |
+| Karen     |
+| Bryan     |
++-----------+
