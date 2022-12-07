@@ -116,3 +116,15 @@ CREATE TABLE bakery_security_logs (
 | exit     | Diana   |
 | exit     | Kelsey  |
 +----------+---------+
++---------+
+|  name   |
++---------+
+| Bruce   |
+| Diana   |
+| Brooke  |
+| Kenny   |
+| Iman    |
+| Luca    |
+| Taylor  |
+| Benista |
++---------+
