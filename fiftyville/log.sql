@@ -3,3 +3,4 @@
 -- to understand format of the database
 .schema
 
+-- to understand what the crime_scene_
