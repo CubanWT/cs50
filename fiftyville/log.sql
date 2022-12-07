@@ -128,7 +128,8 @@ WHERE caller = (
     SELECT phone_number FROM people
     WHERE year = 2021
     AND month = 7
-    AND 
+    AND day = 28
+    AND duration < 60
     AND name IN (
         SELECT name FROM people
         WHERE name IN (
