@@ -32,7 +32,11 @@ AND hour = 10
 AND minute >= 15
 AND minute <= 25;
 
---check ATM withdrawls before time in interview
+--check ATM withdrawls from day of the robbery
 SELECT name FROM people
 JOIN bank_accounts ON people.id = bank_accounts.person_id
 JOIN atm_transactions ON atm_transactions.account_number = bank_accounts.account_number
+WHERE atm_location = "Leggett Street"
+AND year = 2021
+AND month = 7
+AND day = 28
