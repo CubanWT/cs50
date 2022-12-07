@@ -1,17 +1,17 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
+--output of log.sql is piped into txt file for better readability
+
 -- to understand format of the database
 .schema
 
 -- to understand what the crime_scene_reports table stores
--- This was outputted into a txt file for better readability
 SELECT * FROM crime_scene_reports
 WHERE year = 2021
 AND month = 7
 AND day = 28;
 
 -- get interviews from crime scene report
--- this was outputted into txt file for better readability
 SELECT * FROM interviews
 WHERE year = 2021
 AND month = 7
@@ -43,7 +43,7 @@ AND month = 7
 AND day = 28
 AND transaction_type = "withdraw";
 
---check calls for thief's call to associate
+--check calls for thief's call to associate and cross reference with people who left parking lot
 SELECT name from people
 JOIN phone_calls ON phone_calls.caller = people.phone_number
 WHERE year = 2021
@@ -58,4 +58,5 @@ AND people.license_plate IN (
     AND hour = 10
     AND minute >= 15
     AND minute <= 25
+    AND activity = "exit"
 );
