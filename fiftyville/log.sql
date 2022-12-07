@@ -53,4 +53,7 @@ WHERE bank_accounts.account_number = (
     AND day = 28
 );
 
---returns "Amanda" 
+--returns "Amanda" with passport number 1618186613
+
+--cross-check name with passenger list on flight
+SELECT 
