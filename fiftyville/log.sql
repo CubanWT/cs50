@@ -3,4 +3,6 @@
 -- to understand format of the database
 .schema
 
--- to understand what the crime_scene_
+-- to understand what the crime_scene_reports table stores
+-- This was outputted into a txt file for better readability
+SELECT * FROM crime_scene_reports
