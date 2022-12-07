@@ -56,4 +56,5 @@ WHERE bank_accounts.account_number = (
 --returns "Amanda" with passport number 1618186613
 
 --cross-check name with passenger list on flight
-SELECT 
+SELECT * FROM passengers
+WHERE passport_number = 1618186613;
