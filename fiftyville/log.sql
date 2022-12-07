@@ -123,4 +123,7 @@ AND name IN (
 
 --find associate
 SELECT name FROM people
-JOIN 
+JOIN phone_calls ON phone_calls.receiver = people.phone_number
+WHERE caller = (
+    SELECT 
+)
