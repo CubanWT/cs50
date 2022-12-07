@@ -71,3 +71,7 @@ AND day = 28
 AND hour = 10
 AND minute >= 15
 AND minute <= 25;
+
+--get people who's license plate coincides with numbers who called after robbery
+SELECT name FROM people
+JOIN people
