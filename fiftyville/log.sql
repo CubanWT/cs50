@@ -8,13 +8,14 @@
 SELECT * FROM crime_scene_reports
 
 -- get interviews from crime scene report
+-- this was outputted into txt file for better readability
 SELECT * FROM interviews
-   ...> WHERE year = (SELECT year
-   ...> FROM crime_scene_reports
-   ...> WHERE id = 295) AND
-   ...> month = (SELECT month
-   ...> FROM crime_scene_reports
-   ...> WHERE id = 295) AND
-   ...> day = (SELECT day
-   ...> FROM crime_scene_reports
-   ...> WHERE id = 295);
+WHERE year = (SELECT year
+FROM crime_scene_reports
+WHERE id = 295) AND
+month = (SELECT month
+FROM crime_scene_reports
+WHERE id = 295) AND
+day = (SELECT day
+FROM crime_scene_reports
+WHERE id = 295);
