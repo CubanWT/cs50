@@ -2,15 +2,15 @@ body {
     text-align: center;
 }
 
-nav {
-    width: 100vw
-    background-color: blue;
+.nav {
+    padding: 2vh 0;
 }
 
-nav ul {
-    list-style-type: none;
+.nav-item {
+    margin-left: 5vw;
+    height: 100%;
 }
 
-nav ul li {
-    display: inline-block;
+.nav-item:first-child {
+    margin-left: 0;
 }
