@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+
+nav {
+    width: 100vw
+    background-color: blue;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
