@@ -11,7 +11,7 @@ body {
 
 .nav {
     width: 80vw;
-    height: 20vh;
+    height: 5em;
     display: flex;
     flex-flow: row nowrap;
     align-items: stretch;
@@ -27,8 +27,11 @@ body {
 }
 
 .nav-item a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
+    corner-radius: 50%;
 }
 
 #homepage-card {
