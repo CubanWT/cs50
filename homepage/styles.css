@@ -51,3 +51,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.right-container > button {
+    margin-bottom: 1em;
+}
