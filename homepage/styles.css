@@ -26,6 +26,11 @@ body {
     margin-left: 0;
 }
 
+.nav-item a {
+    display: block;
+    height: 100%;
+}
+
 #homepage-card {
     margin-top: 10vh;
     width: 75vw;
