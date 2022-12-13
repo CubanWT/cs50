@@ -11,7 +11,7 @@ body {
 
 .nav {
     width: 80vw;
-    display: fixed;
+    padding-bottom: 1em;
 }
 
 .nav-item:hover {
@@ -54,4 +54,5 @@ body {
 
 .right-container > button {
     margin-bottom: 1em;
+    background-color:
 }
