@@ -11,10 +11,11 @@ body {
 
 .nav {
     width: 80vw;
-    height: 30vh;
+    height: 20vh;
     display: flex;
     flex-flow: row nowrap;
     align-items: stretch;
+    justify-content: stretch;
 }
 
 .nav-item:hover {
