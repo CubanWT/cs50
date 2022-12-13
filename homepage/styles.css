@@ -1,9 +1,7 @@
 body {
-    text-align: center;
-}
-
-.nav {
-    padding: 2vh 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
 .nav-item {
@@ -11,6 +9,45 @@ body {
     height: 100%;
 }
 
+.nav {
+    width: 80vw;
+    display: fixed;
+}
+
+.nav-item:hover {
+    background-color: #F3F3F3;
+}
+
 .nav-item:first-child {
     margin-left: 0;
+}
+
+#homepage-card {
+    margin-top: 10vh;
+    width: 75vw;
+    background-color: lightgray;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    height: 50vh;
+    padding: 0 auto;
+}
+
+.card-body {
+
+    height: 80%;
+    overflow: hidden;
+
+}
+
+.btn-secondary {
+    display: block;
+}
+
+.right-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
