@@ -33,13 +33,6 @@ body {
     height: 100%;
 }
 
-.nav-pills .nav-link {
-    border-radius: 1em;
-    padding: 0;
-    margin: 8 16;
-    width: 90%;
-}
-
 #homepage-card {
     margin-top: 10vh;
     width: 75vw;
