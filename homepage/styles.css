@@ -69,6 +69,11 @@ body {
 }
 
 .card img {
-    height: 340px;
-    width: 450px;
+    height: 100%;
+    max-width: 450px;
+    object-fit: cover;
+}
+
+.card-body a {
+    margin-bottom: 1em;
 }
