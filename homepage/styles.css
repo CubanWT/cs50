@@ -38,17 +38,13 @@ body {
 #homepage-card {
     margin-top: 10vh;
     width: 75vw;
-    background-color: lightgray;
+    background-color: #EEEEEE;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: stretch;
     height: 50vh;
     padding: 0 auto;
-}
-
-.card {
-    background-color: #EEEEEE;
 }
 
 .card-body {
