@@ -69,5 +69,6 @@ body {
 }
 
 .card img {
-    aspect-ratio: 4 / 3;
+    max-height: 342;
+    max-width: 450;
 }
