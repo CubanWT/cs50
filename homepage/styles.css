@@ -74,7 +74,7 @@ body {
     object-fit: cover;
 }
 
-.card-body a {
+.right-container a {
     margin-bottom: 1em;
     text-decoration: none;
 }
