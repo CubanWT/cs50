@@ -69,6 +69,6 @@ body {
 }
 
 .card img {
-    max-height: 342;
-    max-width: 450;
+    height: 342;
+    width: 450;
 }
