@@ -76,4 +76,5 @@ body {
 
 .card-body a {
     margin-bottom: 1em;
+    text-decoration: none;
 }
