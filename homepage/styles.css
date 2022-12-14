@@ -81,4 +81,11 @@ body {
 
 .right-container .btn-secondary {
     background-color: white;
+    color: #0c6dfd;
+    border: #0c6dfd 2px solid;
+    transition: all 0.3s;
+}
+
+.right-container .btn-secondary:hover {
+    background-color: 
 }
