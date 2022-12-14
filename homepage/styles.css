@@ -67,3 +67,7 @@ body {
     margin-bottom: 1em;
     background-color:
 }
+
+.card img {
+    aspect-ratio: 4 / 3;
+}
