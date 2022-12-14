@@ -87,5 +87,18 @@ body {
 }
 
 .right-container .btn-secondary:hover {
-    background-color: 
+    background-color: #8fbcff;
+    color: white;
+    border-color: white;
+}
+
+footer {
+    margin-top: 20vh;
+    height: 30vh;
+    width: 100%;
+    background-color: #DDDDDD;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
