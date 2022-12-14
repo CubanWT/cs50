@@ -78,3 +78,7 @@ body {
     margin-bottom: 1em;
     text-decoration: none;
 }
+
+.right-container .btn-secondary {
+    background-color: white;
+}
