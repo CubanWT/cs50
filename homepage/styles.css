@@ -31,7 +31,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    corner-radius: 50%;
+}
+
+.nav-pills .nav-link {
+    border-radius: 1em;
+    padding: 0;
+    margin: 8 16;
+    width: 90%;
 }
 
 #homepage-card {
