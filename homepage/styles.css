@@ -160,13 +160,9 @@ table td {
 @media only screen and (max-width: 600px) {
     .homepage-card {
         flex-flow: column nowrap;
-        margin-top: 20vh;
+        margin-top: 10vh;
         width: 95vw;
         background-color: #EEEEEE;
-    }
-
-    .card:first-child {
-        margin-top: 10vh;
     }
 
     .card img {
@@ -175,7 +171,7 @@ table td {
     }
 
     .card-body {
-        font-size: 0.7em;
+        font-size: 1em;
     }
 
 }
