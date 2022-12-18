@@ -118,7 +118,7 @@ table {
     display: block;
     font-size: 0.75em;
     font-weight: normal;
-    font-style: none;
+    font-style: normal;
 }
 
 .table-title {
@@ -129,4 +129,8 @@ table {
 
 .table-rating {
     font-size: 2em;
+}
+
+table td img {
+    
 }
