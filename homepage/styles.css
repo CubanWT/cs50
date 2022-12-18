@@ -115,6 +115,7 @@ table {
 }
 
 .table-title span {
+    display: block;
     font-size: 0.75em;
     font-weight: normal;
     font-style: normal;
@@ -128,13 +129,6 @@ table {
 
 .table-rating {
     font-size: 2em;
-}
-
-.table-title {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
 }
 
 table td img {
