@@ -110,11 +110,23 @@ table {
 }
 
 .table-container {
+    margin-top: 10vh;
     width: 80vw;
 }
 
 .table-title span {
     display: block;
-    font: 1em;
+    font-size: 0.75em;
+    font-weight: normal;
+    font-style: none;
 }
 
+.table-title {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+.table-rating {
+    font-size: 2em;
+}
