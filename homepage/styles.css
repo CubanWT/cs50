@@ -107,5 +107,14 @@ footer {
 
 table {
     text-align: center;
-    width: 60vw;
 }
+
+.table-container {
+    width: 80vw;
+}
+
+.table-title span {
+    display: block;
+    font: 1em;
+}
+
