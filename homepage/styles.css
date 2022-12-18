@@ -76,6 +76,10 @@ body {
     object-fit: cover;
 }
 
+@media only screen and {max-width: 600px} {
+    
+}
+
 .right-container a {
     margin-bottom: 1em;
     text-decoration: none;
