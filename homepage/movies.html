@@ -19,7 +19,7 @@
             function checkPreference() {
                 input = document.getElementById("preference-input").value;
                 console.log(input);
-                if (input === "Cyberpunk 2077" || input === "High On Life" || input === "God of War Ragnarok" || input === "VALORANT" || input === "Spiderman: Miles Morales")
+                if (input === "Whiplash" || input === "Everything Everywhere All at Once" || input === "The Shining" || input === "Starwars Revenge of the Sith" || input === "Spider-Man: Into The Spiderverse")
                 {
                     alert("Thank you for your response!");
                 }
@@ -52,37 +52,37 @@
                         Star Wars Revenge of the Sith
                         <span>George Lucas</span>
                     </td>
-                    <td class="table-rating">5/5</td>
+                    <td class="table-rating">4/5</td>
                 </tr>
                 <tr>
-                    <td><img alt="Spiderman: Miles Morales cover" src="images/covers/whiplash.jpg"></td>
+                    <td><img alt="Whiplash cover" src="images/covers/whiplash.jpg"></td>
                     <td class="table-title">
                         Whiplash
                         <span>Damian Chazelle</span>
                     </td>
-                    <td class="table-rating">3/5</td>
+                    <td class="table-rating">3.5/5</td>
                 </tr>
                 <tr>
-                    <td><img alt="VALORANT cover" src="images/covers/the-shining.jpg"></td>
+                    <td><img alt="The Shining cover" src="images/covers/the-shining.jpg"></td>
                     <td class="table-title">
                         The Shining
                         <span>Stanley Kubrick</span>
                     </td>
-                    <td class="table-rating">5/5</td>
+                    <td class="table-rating">3/5</td>
                 </tr>
                 <tr>
-                    <td><img alt="High On Life cover" src="images/covers/everything-everywhere-all-at-once.jpg"></td>
+                    <td><img alt="Everything Everywhere All at Once cover" src="images/covers/everything-everywhere-all-at-once.jpg"></td>
                     <td class="table-title">
                         Everything Everywhere All at Once
                         <span>Daniel Kwan, Daniel Scheinert</span>
                     </td>
-                    <td class="table-rating">4/5</td>
+                    <td class="table-rating">5/5</td>
                 </tr>
                 <tr>
-                    <td><img alt="Cyberpunk 2077 cover" src="images/covers/cyberpunk.jpg"></td>
+                    <td><img alt="Spider-Man: Into The Spiderverse cover" src="images/covers/spiderverse.jpg"></td>
                     <td class="table-title">
-                        Cyberpunk 2077
-                        <span>CD Projekt Red</span>
+                        Spider-Man: Into The Spiderverse
+                        <span>Peter Ramsey, Bob Persichetti, Rodney Rothman</span>
                     </td>
                     <td class="table-rating">3.5/5</td>
                 </tr>
@@ -92,7 +92,7 @@
         <!-- input section -->
         <div class="preference-container">
             <form onsubmit="event.preventDefault(); checkPreference()">
-                <label>Which one of the games above do you prefer?</label>
+                <label>Which one of the movies above do you prefer?</label>
                 <input id="preference-input" type="text">
                 <input type="submit">
             </form>
