@@ -158,6 +158,7 @@ table td {
     .homepage-card {
         flex-flow: column nowrap;
         margin-top: 20vh;
+        width: 95vw;
     }
 
     .card img {
