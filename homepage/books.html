@@ -9,8 +9,8 @@
         <link href="styles.css" rel="stylesheet">
         <title>My Books Tab</title>
         <script>
-            function checkPreference(form) {
-                input = document.querySelector("#preference-input").content;
+            function checkPreference() {
+                input = document.getElementById("preference-input").value;
                 console.log(input);
                 if (input != "The Odyssey" || input != "The Iliad" || input != "1984" || input != "Harry Potter and the Deathly Hallows" || input != "The Catcher In The Rye")
                 {
@@ -84,7 +84,7 @@
 
         <!-- input section -->
         <div class="preference-container">
-            <form onsubmit="event.preventDefault(); checkPreference(this.form)">
+            <form onsubmit="event.preventDefault(); checkPreference()">
                 <label>Which one of the books above do you prefer?</label>
                 <input id="preference-input" type="text">
                 <input type="submit">
