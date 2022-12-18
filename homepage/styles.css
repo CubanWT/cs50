@@ -3,6 +3,7 @@ body {
     flex-flow: column;
     align-items: center;
 }
+/* nav elements */
 
 .nav-item {
     margin-left: 5vw;
@@ -35,6 +36,7 @@ body {
     height: 100%;
 }
 
+/* media query for homepage cards on big screens */
 @media only screen and (min-width: 600px) {
     .homepage-card {
         margin-top: 10vh;
@@ -49,6 +51,7 @@ body {
     }
 }
 
+/* homepage card styling */
 
 .card-body {
 
@@ -97,6 +100,8 @@ body {
     border-color: white;
 }
 
+/* footer styling */
+
 footer {
     margin-top: 20vh;
     height: 30vh;
@@ -107,6 +112,8 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+/* table styling for other html pages */
 
 table {
     text-align: center;
@@ -156,6 +163,9 @@ table td {
 .preference-container form label {
     margin-bottom: 1em;
 }
+
+
+/* table styling on small screens */
 
 @media only screen and (max-width: 600px) {
     .homepage-card {
