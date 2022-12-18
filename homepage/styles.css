@@ -77,7 +77,9 @@ body {
 }
 
 @media only screen and {max-width: 600px} {
-    
+    .card img {
+        width: 100px;
+    }
 }
 
 .right-container a {
