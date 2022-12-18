@@ -157,9 +157,14 @@ table td {
 @media only screen and (max-width: 600px) {
     .homepage-card {
         flex-flow: column nowrap;
+        margin-top: 20vh;
     }
 
     .card img {
-        wdi
+        width: 100%;
+    }
+
+    .card-body {
+        font-size: 0.5em;
     }
 }
