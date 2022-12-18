@@ -136,8 +136,8 @@ table {
 
 table td img {
     object-fit: cover;
-    width: 10em;
-    hieght: 15em;
+    max-width: 10em;
+    max-hieght: 15em;
 }
 
 table td {
@@ -175,7 +175,11 @@ table td {
     }
 
     td img {
-        width: 1em;
+        width: 10vw;
+    }
+
+    td {
+        font-size: 0.5em;
     }
 
 }
