@@ -4,6 +4,12 @@ body {
     align-items: center;
 }
 
+@media only screen and {max-width: 600px} {
+    .home-page card {
+        flex-flow: column nowrap;
+    }
+}
+
 .nav-item {
     margin-left: 5vw;
     height: 100%;
@@ -35,7 +41,7 @@ body {
     height: 100%;
 }
 
-#homepage-card {
+.homepage-card {
     margin-top: 10vh;
     width: 75vw;
     background-color: #EEEEEE;
@@ -74,12 +80,6 @@ body {
     height: 100%;
     width: 450px;
     object-fit: cover;
-}
-
-@media only screen and {max-width: 600px} {
-    .card img {
-        width: 100px;
-    }
 }
 
 .right-container a {
