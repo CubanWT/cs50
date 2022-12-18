@@ -19,7 +19,7 @@
             function checkPreference() {
                 input = document.getElementById("preference-input").value;
                 console.log(input);
-                if (input === "The Odyssey" || input === "The Iliad" || input === "1984" || input === "Harry Potter and the Deathly Hallows" || input === "The Catcher In The Rye")
+                if (input === "Cyberpunk 2077" || input === "High On Life" || input === "God of War Ragnarok" || input === "VALORANT" || input === "Spiderman: Miles Morales")
                 {
                     alert("Thank you for your response!");
                 }
@@ -47,9 +47,9 @@
                     <th>Rating</th>
                 </tr>
                 <tr>
-                    <td><img alt="God of War: Ragnarok cover" src="images/covers/god-of-war.png"></td>
+                    <td><img alt="God of War Ragnarok cover" src="images/covers/god-of-war.png"></td>
                     <td class="table-title">
-                        God of War: Ragnarok
+                        God of War Ragnarok
                         <span>Santa Monica Studio</span>
                     </td>
                     <td class="table-rating">5/5</td>
@@ -92,7 +92,7 @@
         <!-- input section -->
         <div class="preference-container">
             <form onsubmit="event.preventDefault(); checkPreference()">
-                <label>Which one of the books above do you prefer?</label>
+                <label>Which one of the games above do you prefer?</label>
                 <input id="preference-input" type="text">
                 <input type="submit">
             </form>
