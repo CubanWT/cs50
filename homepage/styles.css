@@ -174,4 +174,8 @@ table td {
         font-size: 1em;
     }
 
+    td img {
+        width: 10vw;
+    }
+
 }
