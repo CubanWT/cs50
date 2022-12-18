@@ -149,3 +149,7 @@ table td {
     display: flex;
     flex-flow: column nowrap;
 }
+
+.preference-container form label {
+    margin-bottom: 1em;
+}

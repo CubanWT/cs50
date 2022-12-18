@@ -8,6 +8,19 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="styles.css" rel="stylesheet">
         <title>My Books Tab</title>
+        <script>
+            checkPreferences(form) {
+                input = form.inputbox.value;
+                if (input != "The Odyssey" || input != "The Iliad" || input != "1984" || input != "Harry Potter and the Deathly Hallows" || input != "The Catcher In The Rye" ||)
+                {
+                    alert("That book is not on the list!");
+                }
+                else {
+                    alert("Thank you for your response!");
+                }
+                return false;
+            }
+        </script>
     </head>
     <body>
         <!-- Nav -->
@@ -52,7 +65,7 @@
                 <tr>
                     <td><img alt="Book Title" src="images/covers/catcher-in-the-rye.jpg"></td>
                     <td class="table-title">
-                        Catcher In The Rye
+                        The Catcher In The Rye
                         <span>J.D. Salinger</span>
                     </td>
                     <td class="table-rating">4/5</td>
