@@ -10,7 +10,7 @@
         <title>My Books Tab</title>
         <script>
             function checkPreference(form) {
-                input = document.querySelector("form").element["preference"];
+                input = form.querySelector("#preference-input").value;
                 if (input != "The Odyssey" || input != "The Iliad" || input != "1984" || input != "Harry Potter and the Deathly Hallows" || input != "The Catcher In The Rye")
                 {
                     alert("That book is not on the list!");
@@ -85,7 +85,7 @@
         <div class="preference-container">
             <form onsubmit="event.preventDefault(); checkPreference(this.form)">
                 <label>Which one of the books above do you prefer?</label>
-                <input name="preference" type="text">
+                <input id="preference-input" type="text">
                 <input type="submit">
             </form>
         </div>
