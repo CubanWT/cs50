@@ -10,7 +10,7 @@
         <title>My Books Tab</title>
         <script>
             function checkPreference(form) {
-                input = form.querySelector("#preference-input").value;
+                input = document.querySelector("#preference-input").content;
                 if (input != "The Odyssey" || input != "The Iliad" || input != "1984" || input != "Harry Potter and the Deathly Hallows" || input != "The Catcher In The Rye")
                 {
                     alert("That book is not on the list!");
