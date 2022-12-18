@@ -136,3 +136,7 @@ table td img {
     width: 10em;
     hieght: 15em;
 }
+
+table td {
+    vertical-align: middle;
+}
