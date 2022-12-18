@@ -70,8 +70,10 @@
 
         <!-- input section -->
         <div class="preference-container">
-            <form onsubmit="">
-                
+            <form onsubmit="checkPreference(this.form)">
+                <label name="preference">Which one of the books above do you prefer?</label>
+                <input name="preference" type="text">
+                <input type="submit">
             </form>
         </div>
 

@@ -140,3 +140,12 @@ table td img {
 table td {
     vertical-align: middle;
 }
+
+.preference-container {
+    margin-top: 10vh;
+}
+
+.preference-container form {
+    display: flex;
+    flex-flow: column nowrap;
+}
