@@ -45,7 +45,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
 
-    
+
     return render_template("index.html")
 
 
@@ -78,10 +78,15 @@ def buy():
         user_cash -= total
 
         db.execute("CREATE TABLE IF NOT EXISTS transactions (user_id INTEGER, time TEXT NOT NULL, type TEXT NOT NULL, symbol TEXT NOT NULL, shares INTEGER NOT NULL, price REAL NOT NULL, total REAL NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
+        db.execute("CREATE TABLE IF NOT EXISTS stocks (user_id INTEGER, symbol TEXT NOT NULL, shares INTEGER NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         db.execute("INSERT INTO transactions (user_id, time, type, symbol, shares, price, total) VALUES (?, ?, 'BUY', ?, ?, ?, ?)", user_id, time, symbol, shares, stock["price"], total)
         db.execute("UPDATE users SET cash=? WHERE id=?", user_cash, user_id)
+
+        user_shares = db.execute("SELECT shares FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)[0]["shares"]
+        user_shares += shares
+        db.execute("INSERT INTO stocks (user_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, user_shares)
 
 
     return render_template("buy.html")
