@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Symbol</th>
@@ -14,7 +14,11 @@
             </tr>
         </thead>
         <tbody>
-            
+            <tr>
+                <td>{{ symbol }}</td>
+                <td>{{ name }}</td>
+                <td>{{ price }}</td>
+            </tr>
         </tbody>
     </table>
 {% endblock %}
