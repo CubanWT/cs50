@@ -129,9 +129,9 @@ def register():
             return apology("Must provide a username")
         if username in db.execute("SELECT username FROM users;"):
             return apology("Username already exists")
-
-        hash = generate_password_hash(password)
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+        else:
+            hash = generate_password_hash(password)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
     else:
         return render_template("register.html")
