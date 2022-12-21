@@ -44,9 +44,9 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    stocks = db.execute("SELECT ")
+    stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", session.get("user_id"))
 
-    return render_template("index.html")
+    return render_template("index.html", stocks=stocks)
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -78,7 +78,7 @@ def buy():
         user_cash -= total
 
         db.execute("CREATE TABLE IF NOT EXISTS transactions (user_id INTEGER, time TEXT NOT NULL, type TEXT NOT NULL, symbol TEXT NOT NULL, shares INTEGER NOT NULL, price REAL NOT NULL, total REAL NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
-        db.execute("CREATE TABLE IF NOT EXISTS stocks (user_id INTEGER, symbol TEXT NOT NULL, shares INTEGER NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
+        db.execute("CREATE TABLE IF NOT EXISTS stocks (user_id INTEGER, symbol TEXT UNIQUE, shares INTEGER NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         db.execute("INSERT INTO transactions (user_id, time, type, symbol, shares, price, total) VALUES (?, ?, 'BUY', ?, ?, ?, ?)", user_id, time, symbol, shares, stock["price"], total)
