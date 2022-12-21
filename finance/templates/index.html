@@ -18,8 +18,8 @@
                     <tr>
                         <td>{{ stock["symbol"] }}</td>
                         <td>{{ stock["shares"] }}</td>
-                        <td>{{ price[stock] }}</td>
-                        <td>{{ stock["shares"] * price[stock] }}</td>
+                        <td>{{ price[0] }}</td>
+                        <td>{{ stock["shares"] * price[0] }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
