@@ -64,9 +64,13 @@ def buy():
         if not shares > 0:
             return apology("Invalid number of shares")
 
+        total = shares * stock["price"]
+
+        user_cash = db.execute("SELECT cash FROM users WHERE id = ")
+
         db.execute("CREATE TABLE IF NOT EXISTS transactions (user_id INTEGER,, time TEXT NOT NULL, type TEXT NOT NULL, symbol TEXT NOT NULL, shares INTEGER NOT NULL, price REAL NOT NULL, total REAL NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id)")
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
+
 
     return render_template("buy.html")
 
