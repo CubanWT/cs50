@@ -131,7 +131,7 @@ def register():
         users = db.execute("SELECT username FROM users")
 
         for user in users:
-            if username = user["username"]:
+            if username == user["username"]:
                 return apology("Username already exists")
 
         hash = generate_password_hash(password)
