@@ -127,7 +127,9 @@ def register():
             return apology("Username cannot be blank")
         elif username in db.execute("SELECT username FROM users"):
             return apology("Username already exists")
-    return 
+
+        hash = generate
+    return
 
 
 @app.route("/sell", methods=["GET", "POST"])
