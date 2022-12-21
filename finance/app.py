@@ -66,7 +66,10 @@ def buy():
 
         total = shares * stock["price"]
 
-        user_cash = db.execute("SELECT cash FROM users WHERE id = ")
+        user_cash = db.execute("SELECT cash FROM users WHERE id = ?", session.get("user_id"))
+
+        if user_cash < total:
+            return apology("Insufficient funds. get that cash up")
 
         db.execute("CREATE TABLE IF NOT EXISTS transactions (user_id INTEGER,, time TEXT NOT NULL, type TEXT NOT NULL, symbol TEXT NOT NULL, shares INTEGER NOT NULL, price REAL NOT NULL, total REAL NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id)")
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
