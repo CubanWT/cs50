@@ -116,6 +116,9 @@ def quote():
         input = request.form.get("symbol")
         stock = lookup(input)
 
+        if stock == None:
+            return apology("Not a valid symbol")
+            
         symbol = stock["symbol"]
         name = stock["name"]
         price = stock["price"]
