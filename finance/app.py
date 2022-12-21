@@ -125,7 +125,7 @@ def register():
             return apology("Passwords do not match")
         if username.strip() == "":
             return apology("Username cannot be blank")
-        elif username in db.execute("SELECT username FROM users"):
+        if username in db.execute("SELECT username FROM users"):
             return apology("Username already exists")
 
         hash = generate_password_hash(password)
