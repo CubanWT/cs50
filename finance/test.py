@@ -6,6 +6,6 @@ name = "willeupi"
 
 test_list = db.execute("SELECT username FROM users")
 
-if name in test_list["username"]:
+if name in test_list:
     print(name)
 print(test_list)
