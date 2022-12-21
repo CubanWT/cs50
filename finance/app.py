@@ -85,8 +85,11 @@ def buy():
         db.execute("UPDATE users SET cash=? WHERE id=?", user_cash, user_id)
 
         user_shares = db.execute("SELECT shares FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)
-        if user_shares = NULL
-        user_shares += shares
+        if user_shares == False:
+            user_shares = shares
+        else:
+            user_shares = user_shares[0]["shares"]
+            user_shares += shares
         db.execute("INSERT INTO stocks (user_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, user_shares)
 
 
