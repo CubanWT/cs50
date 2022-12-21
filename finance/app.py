@@ -127,7 +127,7 @@ def register():
             return apology("Must provide a password")
         if not username:
             return apology("Must provide a username")
-        if username in db.execute("SELECT username FROM users"):
+        if username in db.execute("SELECT username FROM users").values():
             return apology("Username already exists")
 
         hash = generate_password_hash(password)
