@@ -118,10 +118,10 @@ def quote():
 
         if stock == None:
             return apology("Not a valid symbol")
-            
+
         symbol = stock["symbol"]
         name = stock["name"]
-        price = stock["price"]
+        price = usd(stock["price"])
 
         return render_template("quoted.html", symbol=symbol, name=name, price=price)
 
