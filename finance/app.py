@@ -5,6 +5,7 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
+from datetime import datetime
 
 from helpers import apology, login_required, lookup, usd
 
@@ -64,7 +65,7 @@ def buy():
             return apology("Invalid number of shares")
 
         db.execute("CREATE TABLE IF NOT EXISTS transactions (user_id INTEGER,, time TEXT NOT NULL, type TEXT NOT NULL, symbol TEXT NOT NULL, shares INTEGER NOT NULL, price REAL NOT NULL, total REAL NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id)")
-        
+        time = datetime.now()
 
     return render_template("buy.html")
 
