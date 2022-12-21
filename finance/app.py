@@ -114,7 +114,14 @@ def quote():
 
     if request.method == "POST":
         input = request.form.get("symbol")
-        
+        stock = lookup(input)
+
+        symbol = stock["symbol"]
+        name = stock["name"]
+        price = stock["price"]
+
+        return render_template("quoted.html", symbol=symbol, name=name, price=price)
+
 
     return render_template("quote.html")
 
