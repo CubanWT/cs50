@@ -127,8 +127,12 @@ def register():
             return apology("Must provide a password")
         if not username:
             return apology("Must provide a username")
-        if username in db.execute("SELECT username FROM users"):
-            return apology("Username already exists")
+
+        users = db.execute("SELECT username FROM users")
+
+        for user in users:
+            if username = user["username"]:
+                return apology("Username already exists")
 
         hash = generate_password_hash(password)
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
