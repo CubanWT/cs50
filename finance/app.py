@@ -128,7 +128,8 @@ def register():
         elif username in db.execute("SELECT username FROM users"):
             return apology("Username already exists")
 
-        hash = generate
+        hash = generate_password_hash(password)
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
     return
 
 
