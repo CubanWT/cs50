@@ -123,15 +123,18 @@ def register():
 
         if password != request.form.get("confirmation"):
             return apology("Passwords do not match")
-        if username.strip() == "":
-            return apology("Username cannot be blank")
-        if username in db.execute("SELECT username FROM users"):
+        if not password:
+            return apology("Must provide a password")
+        if not username:
+            return apology("Must provide a username")
+        if username in db.execute("SELECT username FROM users;"):
             return apology("Username already exists")
 
         hash = generate_password_hash(password)
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
-    return render_template("register.html")
+    else:
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
