@@ -68,13 +68,15 @@ def buy():
 
         user_id = session.get("user_id")
 
-        user_cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        user_cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
 
         if user_cash < total:
             return apology("Insufficient funds. get that cash up")
 
         db.execute("CREATE TABLE IF NOT EXISTS transactions (user_id INTEGER,, time TEXT NOT NULL, type TEXT NOT NULL, symbol TEXT NOT NULL, shares INTEGER NOT NULL, price REAL NOT NULL, total REAL NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id)")
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        db.execute(f"UPDATE transactions SET user_id={user_id}, time={time}, type='BUY', symbol={symbol}, shares={shares}, price={stock["price"]}, total={total}")
 
 
     return render_template("buy.html")
