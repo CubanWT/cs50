@@ -63,7 +63,7 @@ def buy():
         if not shares > 0:
             return apology("Invalid number of shares")
 
-        db.execute("CREATE TABLE IF NOT EXISTS")
+        db.execute("CREATE TABLE IF NOT EXISTS transactions")
 
     return render_template("buy.html")
 
