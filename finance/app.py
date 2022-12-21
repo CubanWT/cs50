@@ -118,7 +118,6 @@ def quote():
 def register():
     """Register user"""
 
-    if m
     return apology("TODO")
 
 
