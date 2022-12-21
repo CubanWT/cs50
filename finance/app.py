@@ -60,7 +60,7 @@ def buy():
         if stock == None:
             return apology("Invalid symbol")
 
-        if shares !> 0:
+        if not shares > 0:
             return apology("Invalid number of shares")
 
     return render_template("buy.html")
