@@ -65,7 +65,6 @@ def buy():
 
         stock = lookup(symbol)
 
-
         if stock == None:
             return apology("Invalid symbol")
 
@@ -87,7 +86,8 @@ def buy():
         db.execute("CREATE TABLE IF NOT EXISTS stocks (user_id INTEGER, symbol TEXT UNIQUE, shares INTEGER NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        db.execute("INSERT INTO transactions (user_id, time, type, symbol, shares, price, total) VALUES (?, ?, 'BUY', ?, ?, ?, ?)", user_id, time, symbol, shares, stock["price"], total)
+        db.execute("INSERT INTO transactions (user_id, time, type, symbol, shares, price, total) VALUES (?, ?, 'BUY', ?, ?, ?, ?)",
+            user_id, time, symbol, shares, stock["price"], total)
         db.execute("UPDATE users SET cash=? WHERE id=?", user_cash, user_id)
 
         user_shares = db.execute("SELECT shares FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)
@@ -100,8 +100,6 @@ def buy():
             db.execute("UPDATE stocks SET shares = ? WHERE user_id = ? AND symbol = ?", user_shares, user_id, symbol,)
 
         return redirect("/")
-
-
 
     return render_template("buy.html")
 
@@ -163,6 +161,7 @@ def account():
 
     return render_template("account.html", user=user)
 
+
 @app.route("/change_password", methods=["GET", "POST"])
 @login_required
 def change_password():
@@ -191,8 +190,8 @@ def change_password():
         flash("Password changed! Please log in again")
         return redirect("/logout")
 
-
     return render_template("change_password.html")
+
 
 @app.route("/delete_account", methods=["GET", "POST"])
 @login_required
@@ -209,8 +208,8 @@ def delete_account():
         db.execute("DELETE FROM users WHERE id = ?", user_id)
         return redirect("/logout")
 
-
     return render_template("delete_account.html")
+
 
 @app.route("/logout")
 def logout():
@@ -240,7 +239,6 @@ def quote():
         price = usd(stock["price"])
 
         return render_template("quoted.html", symbol=symbol, name=name, price=price)
-
 
     return render_template("quote.html")
 
@@ -293,7 +291,6 @@ def sell():
         if not user_owned:
             return apology("You do not own this stock")
 
-
         user_stock = db.execute("SELECT * FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)[0]
         user_stock["price"] = lookup(user_stock["symbol"])["price"]
 
@@ -310,9 +307,11 @@ def sell():
         user_stock["shares"] -= shares
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        db.execute("UPDATE stocks SET shares = ? WHERE user_id = ? AND symbol = ?", user_stock["shares"], user_id, user_stock["symbol"])
+        db.execute("UPDATE stocks SET shares = ? WHERE user_id = ? AND symbol = ?",
+                   user_stock["shares"], user_id, user_stock["symbol"])
         db.execute("UPDATE users SET cash = ? WHERE id = ?", user_cash, user_id)
-        db.execute("INSERT INTO transactions (user_id, time, type, symbol, shares, price, total) VALUES (?, ?, 'SELL', ?, ?, ?, ?)", user_id, time, user_stock["symbol"], shares, user_stock["price"], value)
+        db.execute("INSERT INTO transactions (user_id, time, type, symbol, shares, price, total) VALUES (?, ?, 'SELL', ?, ?, ?, ?)",
+                   user_id, time, user_stock["symbol"], shares, user_stock["price"], value)
         return redirect("/")
 
     return render_template("sell.html", stocks=stocks)
