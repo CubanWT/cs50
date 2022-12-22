@@ -8,7 +8,7 @@
     <h1 class="display-4">Buy Stock</h1>
     <form action="/buy" method="POST">
         <input autofocus name="symbol" placeholder="Stock Symbol" required type="text">
-        <input name="shares" placeholder="Number of Shares" required type="text">
+        <input name="shares" placeholder="Number of Shares" required type="number">
         <input type="submit" value="Buy">
     </form>
 {% endblock %}
