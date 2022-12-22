@@ -196,9 +196,13 @@ def change_password():
 
 @app.route("/delete_account", methods=["GET", "POST"])
 @login_required
-def delete_account:
+def delete_account():
     if request.method == "POST":
-        
+        username = request.form.get("username")
+
+        user_id = session.get("user_id")
+
+
 
     return render_template("delete_account.html")
 
