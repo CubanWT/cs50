@@ -67,7 +67,11 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        shares = float(request.form.get("shares"))
+
+        try:
+            shares = int(request.form.get("shares"))
+        except:
+            
 
         stock = lookup(symbol)
 
@@ -88,8 +92,8 @@ def buy():
 
         user_cash -= total
 
-        db.execute("CREATE TABLE IF NOT EXISTS transactions (user_id INTEGER, time TEXT NOT NULL, type TEXT NOT NULL, symbol TEXT NOT NULL, shares REAL NOT NULL, price REAL NOT NULL, total REAL NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
-        db.execute("CREATE TABLE IF NOT EXISTS stocks (user_id INTEGER, symbol TEXT UNIQUE, shares REAL NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
+        db.execute("CREATE TABLE IF NOT EXISTS transactions (user_id INTEGER, time TEXT NOT NULL, type TEXT NOT NULL, symbol TEXT NOT NULL, shares INTEGER NOT NULL, price REAL NOT NULL, total REAL NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
+        db.execute("CREATE TABLE IF NOT EXISTS stocks (user_id INTEGER, symbol TEXT UNIQUE, shares INTEGER NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         db.execute("INSERT INTO transactions (user_id, time, type, symbol, shares, price, total) VALUES (?, ?, 'BUY', ?, ?, ?, ?)",
