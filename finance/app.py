@@ -227,6 +227,7 @@ def sell():
 
 
         user_stock = db.execute("SELECT * FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)[0]
+        user_stock["price"] = lookup(user_stock["symbol"])["price"]
 
         if shares > user_stock["shares"]:
             return apology(f"You do not have that many shares in {symbol}")
@@ -234,6 +235,7 @@ def sell():
             return apology("Invalid number of shares")
 
         value = shares * user_stock["price"]
+        
 
 
 
