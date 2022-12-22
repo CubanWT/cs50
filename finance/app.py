@@ -172,7 +172,18 @@ def change_password():
         new_password = request.form.get("new_password")
         confirmation = request.form.get("confirmation")
 
-        current_password = 
+        if not new_password == confirmation:
+            return apology("New passwords do not match")
+
+        if new_password.empty():
+            return apology("Password cannot be left blank")
+
+        current_password_hash = db.execute("SELECT hash FROM users WHERE id = ?", session.get("user_id"))[0]["hash"]
+
+        if not check_password_hash(current_password_hash, old_password):
+            return apology("Incorrect password")
+
+        
 
     return render_template("change_password.html")
 
