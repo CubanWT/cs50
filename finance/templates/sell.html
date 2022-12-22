@@ -5,4 +5,12 @@
 {% endblock %}
 
 {% block main %}
+<form action="/buy" method="POST">
+    <select name="symbol">
+        {% for stock in stocks %}
+            <option>{{ stock["symbol"] }}</option>"
+        {% endfor %}
+    </select>
+</form>
 
+{% endblock %}
