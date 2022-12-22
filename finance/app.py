@@ -45,16 +45,13 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", session.get("user_id"))
-    value = 0
 
     for stock in stocks:
         stock_price = float(lookup(stock["symbol"])["price"])
-        value = stock["shares"] * stock_price
+        stock["value"] = usd(stock["shares"] * stock_price)
         stock["price"] = usd(stock_price)
 
-    value = usd(value)
-
-    return render_template("index.html", stocks=stocks, value=value)
+    return render_template("index.html", stocks=stocks)
 
 
 @app.route("/buy", methods=["GET", "POST"])
