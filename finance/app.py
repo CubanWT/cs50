@@ -87,7 +87,7 @@ def buy():
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         db.execute("INSERT INTO transactions (user_id, time, type, symbol, shares, price, total) VALUES (?, ?, 'BUY', ?, ?, ?, ?)",
-            user_id, time, symbol, shares, stock["price"], total)
+                   user_id, time, symbol, shares, stock["price"], total)
         db.execute("UPDATE users SET cash=? WHERE id=?", user_cash, user_id)
 
         user_shares = db.execute("SELECT shares FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)
