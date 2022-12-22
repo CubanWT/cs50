@@ -206,7 +206,8 @@ def delete_account():
 
         if not user["username"] == username:
             return apology("Username does not match")
-        
+        db.execute("DELETE FROM users WHERE id = ?", user_id)
+        return redirect("/logout")
 
 
     return render_template("delete_account.html")
