@@ -10,8 +10,22 @@
             <th>Symbol</th>
             <th>Price</th>
             <th>Shares</th>
+            <th>Type</th>
             <th>Time</th>
+            <th>Total</th>
         </thead>
+        <tbody>
+            {% for entry in transactions %}
+                <tr>
+                    <td>{{ entry["symbol"] }}</td>
+                    <td>{{ entry["price"] }}</td>
+                    <td>{{ entry["shares"] }}</td>
+                    <td class="transaction-type">{{ entry["type"] }}</td>
+                    <td>{{ entry["time"] }}</td>
+                    <td class="transaction-total">{{ entry["total"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 
 {% endblock %}
