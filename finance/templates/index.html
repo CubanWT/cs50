@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block main %}
-    <h3 class="user_cash">Wallet: <span>{{ user_cash }}</span></h3>
+    <div class="money-container">
+        <h3 class="user_cash">Wallet: <span>{{ user_cash }}</span></h3>
+        <h3 class="user_cash">Total: <span> {{ net_worth }}</span></h3>
+    </div>
     <div class="stock-container">
         <table class="table">
             <thead>
