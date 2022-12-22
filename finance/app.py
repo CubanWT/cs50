@@ -159,7 +159,9 @@ def login():
 def account():
     """account page"""
 
-    return render_template("account.html")
+    user = db.execute("SELECT * FROM users WHERE id = ?", session.get("user_id"))[0]
+
+    return render_template("account.html", user=user)
 
 @app.route("/logout")
 def logout():
