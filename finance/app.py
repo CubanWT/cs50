@@ -47,7 +47,7 @@ def index():
     stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", session.get("user_id"))
     price = []
     for stock in stocks:
-        stock_price = float(lookup(stock["symbol"])["price"]
+        stock_price = float(lookup(stock["symbol"])["price"])
         price.append(stock_price)
 
     return render_template("index.html", stocks=stocks, price=price)
