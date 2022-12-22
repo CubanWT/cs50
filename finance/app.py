@@ -154,6 +154,13 @@ def login():
         return render_template("login.html")
 
 
+@app.route("/account")
+@login_required
+def account():
+    """account page"""
+
+    return render_template("account.html")
+
 @app.route("/logout")
 def logout():
     """Log user out"""
