@@ -163,7 +163,7 @@ def account():
 
     return render_template("account.html", user=user)
 
-@app.route("/change_password")
+@app.route("/change_password", methods=["GET", "POST"])
 @login_required
 def change_password():
     """change user's password"""
