@@ -71,7 +71,7 @@ def buy():
         try:
             shares = int(request.form.get("shares"))
         except ValueError:
-            return apology("Shares is not an integer!")
+            return apology("Invalid number of shares")
 
         stock = lookup(symbol)
 
