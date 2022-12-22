@@ -213,6 +213,8 @@ def sell():
     if request.method == "POST":
         # form submission logic
 
+
+    stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", session.get("user_id"))
     
 
-    return render_template("sell.html")
+    return render_template("sell.html", stocks=stocks)
