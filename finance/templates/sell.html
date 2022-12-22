@@ -6,6 +6,7 @@
 
 {% block main %}
 <form action="/buy" method="POST">
+    <label name="symbol">Stock Symbol:</label>
     <select name="symbol">
         {% for stock in stocks %}
             <option>{{ stock["symbol"] }}</option>"
