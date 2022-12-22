@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block main %}
+    <h1>Buy Stock</h1>
     <form action="/buy" method="POST">
         <input autofocus name="symbol" placeholder="Stock Symbol" required type="text">
         <input name="shares" placeholder="Number of Shares" required type="text">
