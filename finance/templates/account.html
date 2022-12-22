@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <div class="account-container">
+        <h3 class="username"> Username: <span>{{ user["name"] }}</span></h3>
+        <a href="/forgotpassword"><button class="button">Change Password</button></a>
+        <a href="/deleteaccount">Delete Account</a>
+    </div>
+
+{% endblock %}
