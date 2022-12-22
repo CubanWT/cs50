@@ -244,6 +244,7 @@ def sell():
 
         db.execute("UPDATE stocks SET shares = ? WHERE user_id = ? AND symbol = ?", user_stock["shares"], user_id, user_stock["symbol"])
         db.execute("UPDATE users SET cash = ? WHERE id = ?", user_cash, user_id)
+        db.execute("INSERT INTO transactions (user_id, time, type, symbol, price, total))
         return redirect("/")
 
     return render_template("sell.html", stocks=stocks)
