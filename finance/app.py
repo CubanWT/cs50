@@ -194,6 +194,14 @@ def change_password():
 
     return render_template("change_password.html")
 
+@app.route("/delete_account", methods=["GET", "POST"])
+@login_required
+def delete_account:
+    if request.method == "POST":
+        
+
+    return render_template("delete_account.html")
+
 @app.route("/logout")
 def logout():
     """Log user out"""
