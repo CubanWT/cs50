@@ -111,7 +111,7 @@ def buy():
 def history():
     """Show history of transactions"""
 
-    transactions = db.execute("SELECT * FROM transactions WHERE user_id = ?", session.get("user_id"))
+    transactions = db.execute("SELECT * FROM transactions WHERE user_id = ? ORDER BY time DESC", session.get("user_id"))
     for entry in transactions:
         entry["price"] = usd(entry["price"])
         entry["total"] = usd(entry["total"])
