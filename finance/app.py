@@ -210,16 +210,17 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+    user_id = session.get("user_id")
+    stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", user_id)
 
-        stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", session.get("user_id"))
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
 
         user_owned = False
 
         for stock in stocks:
-            if symbol = stock["symbol"]
+            if symbol == stock["symbol"]:
                 user_owned = True
                 break
         if not user_owned:
@@ -235,10 +236,14 @@ def sell():
             return apology("Invalid number of shares")
 
         value = shares * user_stock["price"]
-        
 
+        user_cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+        user_cash += value
 
+        user_stock["shares"] -= shares
 
-
+        db.execute("UPDATE stocks (shares) VALUES (?) WHERE user_id = ? AND symbol = ?", user_stock["shares"], user_id, user_stock["symbol"])
+        db.execute("UPDATE users (cash) VALUES (?) WHERE id = ?", user_cash, user_id)
+        return redirect("/")
 
     return render_template("sell.html", stocks=stocks)

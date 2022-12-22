@@ -3,6 +3,6 @@ from cs50 import SQL
 
 db = SQL("sqlite:///finance.db")
 
-user_shares = db.execute("SELECT * FROM stocks WHERE user_id = ? AND symbol = ?", 1, "AAPL")[0]["shares"]
+user_cash = db.execute("SELECT cash FROM users WHERE id = ?", 1)[0]["cash"]
 
-print(user_shares)
+print(user_cash)

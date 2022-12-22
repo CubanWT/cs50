@@ -6,7 +6,7 @@
 
 {% block main %}
 <h1 class="display-4">Sell Stock</h1>
-<form action="/buy" method="POST">
+<form action="/sell" method="POST">
     <label name="symbol">Stock Symbol:</label>
     <select name="symbol" required>
         {% for stock in stocks %}
