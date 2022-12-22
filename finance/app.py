@@ -210,13 +210,24 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+
+        stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", session.get("user_id"))
     if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
-        if symbol not in db.execute("SELECT symbol FROM)
+        user_owned = False
 
-    stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", session.get("user_id"))
+        for stock in stocks:
+            if symbol = stock["symbol"]
+                user_owned = True
+                break
+        if not user_owned:
+            return apology("You do not own this stock")
+
+        user_shares = db.execute("SELECT * FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)
+
+
 
 
     return render_template("sell.html", stocks=stocks)
