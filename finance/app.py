@@ -225,7 +225,15 @@ def sell():
         if not user_owned:
             return apology("You do not own this stock")
 
-        user_shares = db.execute("SELECT * FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)
+        user_shares = db.execute("SELECT * FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)[0]["shares"]
+
+        if shares > user_shares:
+            return apology(f"You do not have that many shares in {symbol}")
+        elif not shares > 0:
+            return apology("Invalid number of shares")
+
+        value = 
+
 
 
 
