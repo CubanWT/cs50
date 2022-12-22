@@ -163,6 +163,15 @@ def account():
 
     return render_template("account.html", user=user)
 
+@app.route("/change_password")
+@login_required
+def change_password():
+    """change user's password"""
+    if request.method == "POST":
+        
+
+    return render_template("change_password.html")
+
 @app.route("/logout")
 def logout():
     """Log user out"""
