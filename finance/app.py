@@ -179,7 +179,7 @@ def change_password():
             return apology("Password cannot be left blank")
 
         user_id = session.get("user_id")
-        
+
         current_password_hash = db.execute("SELECT hash FROM users WHERE id = ?", user_id)[0]["hash"]
 
         if not check_password_hash(current_password_hash, old_password):
@@ -188,6 +188,7 @@ def change_password():
         new_password_hash = generate_password_hash(new_password)
 
         db.execute("UPDATE users SET hash = ? WHERE id = ?", new_password_hash, user_id)
+        return redirect("/logout")
 
     return render_template("change_password.html")
 
