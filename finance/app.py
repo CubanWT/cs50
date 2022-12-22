@@ -168,7 +168,11 @@ def account():
 def change_password():
     """change user's password"""
     if request.method == "POST":
-        
+        old_password = request.form.get("old_password")
+        new_password = request.form.get("new_password")
+        confirmation = request.form.get("confirmation")
+
+        current_password = 
 
     return render_template("change_password.html")
 
