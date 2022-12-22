@@ -188,7 +188,9 @@ def change_password():
         new_password_hash = generate_password_hash(new_password)
 
         db.execute("UPDATE users SET hash = ? WHERE id = ?", new_password_hash, user_id)
+        flash("Password changed! Please log in again")
         return redirect("/logout")
+
 
     return render_template("change_password.html")
 
