@@ -205,7 +205,8 @@ def delete_account():
         user = db.execute("SELECT * FROM users WHERE id = ?", user_id)[0]
 
         if not user["username"] == username:
-            
+            return apology("Username does not match")
+        
 
 
     return render_template("delete_account.html")
