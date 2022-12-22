@@ -99,6 +99,8 @@ def buy():
             user_shares += shares
             db.execute("UPDATE stocks SET shares = ? WHERE user_id = ? AND symbol = ?", user_shares, user_id, symbol,)
 
+        return redirect("/")
+
 
 
     return render_template("buy.html")
