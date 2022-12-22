@@ -211,9 +211,10 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
-        # form submission logic
         symbol = request.form.get("symbol")
-        print(symbol)
+        shares = request.form.get("shares")
+
+        if symbol not in db.execute("SELECT symbol FROM)
 
     stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", session.get("user_id"))
 
