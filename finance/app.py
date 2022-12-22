@@ -175,7 +175,7 @@ def change_password():
         if not new_password == confirmation:
             return apology("New passwords do not match")
 
-        if new_password.empty():
+        if not new_password:
             return apology("Password cannot be left blank")
 
         user_id = session.get("user_id")
