@@ -202,6 +202,10 @@ def delete_account():
 
         user_id = session.get("user_id")
 
+        user = db.execute("SELECT * FROM users WHERE id = ?", user_id)[0]
+
+        if not user["username"] == username:
+            
 
 
     return render_template("delete_account.html")
