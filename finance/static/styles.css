@@ -25,3 +25,7 @@ nav .navbar-brand .green
 .user_cash span {
     font-weight: normal;
 }
+
+.display-4 {
+    padding-bottom: 10vh;
+}

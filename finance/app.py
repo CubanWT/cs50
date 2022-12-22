@@ -261,6 +261,7 @@ def register():
 
         hash = generate_password_hash(password)
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+        return redirect("/")
 
     else:
         return render_template("register.html")
